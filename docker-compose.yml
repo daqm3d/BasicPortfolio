@@ -1,0 +1,16 @@
+version: '2.2'
+
+services:
+  web:
+    container_name: BasicPortfolio
+    #restart: always
+    build: ./.docker
+    ports:
+      - 4321:4321
+    networks:
+      - overlay
+    volumes:
+      - /var/Docker/BasicPortfolio/:/app
+
+networks:
+  overlay:

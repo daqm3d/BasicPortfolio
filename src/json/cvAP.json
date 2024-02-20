@@ -1,0 +1,58 @@
+{
+  "basics": {
+    "name": "Deivy Armando Quintero Martinez",
+    "label": "Full Stack Developer",
+    "image": "",
+    "email": "daqm3d@gmail.com",
+    "phone": "+58 4129880279",
+    "url": "",
+    "summary": "+3 años de experiencia como Desarrollador Web. ",
+
+    "location": {
+      "address": "",
+      "postalCode": "1220",
+      "city": "Guarenas",
+      "countryCode": "VE",
+      "region": "Venezuela"
+    },
+
+    "profiles": [
+      {
+        "network": "Linkedin",
+        "usernam": "daqm3d",
+        "url": "https://"
+      },
+      {
+        "network": "Git",
+        "usernam": "daqm3d",
+        "url": "https://"
+      },
+      {
+        "network": "Gmail",
+        "usernam": "daqm3d",
+        "url": "https://"
+      }
+    ]
+  },
+
+  "work": [
+    {
+      "name": "",
+      "position": "",
+      "url": "",
+      "starDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": ["adasd"]
+    },
+    {
+      "name": "",
+      "position": "",
+      "url": "",
+      "starDate": "",
+      "endDate": "",
+      "summary": "",
+      "highlights": ["adasd"]
+    }
+  ]
+}

@@ -1,19 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Experiencia from '../components/Experiencia.astro';
-import Conocimientos from '../components/Conocimientos.astro';
-import Cursos from '../components/Cursos.astro';
-import Proyectos from '../components/Proyectos.astro';
-import Educasion from '../components/Educasion.astro';
-import Referencias from '../components/Referencias.astro';
+import Hero from '../components/estructura/Hero.astro';
+import Experiencia from '../components/estructura/Experiencia.astro';
+import Conocimientos from '../components/estructura/Conocimientos.astro';
+import Cursos from '../components/estructura/Cursos.astro';
+import Proyectos from '../components/estructura/Proyectos.astro';
+import Educasion from '../components/estructura/Educasion.astro';
+import Referencias from '../components/estructura/Referencias.astro';
 import Manager from '../components/Manager.astro';
 
 ---
-
 <Layout title="DAQM3D">
 	<main>
-		<h1>PORTFOLIO</h1>
 		<Hero/>
 
 		<Experiencia/>
@@ -31,5 +29,9 @@ import Manager from '../components/Manager.astro';
 </Layout>
 
 <style>
-
+main{
+	padding: 4rem;
+	margin: auto;
+	width: 100%;
+}
 </style>

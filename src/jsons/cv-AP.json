@@ -1,0 +1,193 @@
+{
+  "basics": {
+    "name": "Deivy Armando Quintero Martinez",
+    "alias": "DAQM3D",
+    "label": "Full Stack Developer enfocado en las 3D, Dedicación-recopilación, Desarrollo y Despliegue de Aplicaciones Web",
+    "image": "./DAQM3D.png",
+    "email": "daqm3d@gmail.com",
+    "phone": "+58 4129880279",
+    "url": "https://daqm3d.dev",
+    "summary": "+3 años de experiencia como Desarrollador Web. ",
+    "location": {
+      "address": "Miranda",
+      "postalCode": "1220",
+      "city": "Guarenas",
+      "countryCode": "VE",
+      "region": "Venezuela"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "usernam": "daqm3d",
+        "url": "https://"
+      },
+      {
+        "network": "GitHub",
+        "usernam": "daqm3d",
+        "url": "https://"
+      }
+    ]
+  },
+
+  "work": [
+    {
+      "name": "Superintendencia Nacional Antidroga.",
+      "position": "Coordinador de Base de Datos y Páginas Web.",
+      "url": "",
+      "startDate": "12/02/2020",
+      "endDate": "03/11/2023",
+      "address": "Caracas - Chacaito",
+      "summary": [
+        "Integrar y coordinar los proyectos y grupos de desarrollo, en materia de sistemas de información para la atención y resolución de problemas o requerimientos.",
+        "Realizar las actividades de programación de los sistemas de información requeridos en el diseño de estructuras web, implementación del flujo dinámico y acciones interactivas.",
+        "Realizar las actividades de recopilación y documentación de la data de los sistemas de información, requerimientos y funciones."
+      ],
+      "highlights": [
+        "Integrar y coordinar los proyectos y grupos de desarrollo, en materia de sistemas de información para la atención y resolución de problemas o requerimientos.",
+        "Realizar las actividades de programación de los sistemas de información requeridos en el diseño de estructuras web, implementación del flujo dinámico y acciones interactivas.",
+        "Realizar las actividades de recopilación y documentación de la data de los sistemas de información, requerimientos y funciones."
+      ]
+    },
+    {
+      "name": "Oficina Nacional Antidroga.",
+      "position": "Desarrollador web.",
+      "url": "",
+      "startDate": "12/08/2019",
+      "endDate": "12/02/2020",
+      "address": "Caracas - Chacaito",
+      "summary": [
+        "Programador Full Stack Developer.",
+        "Desarrollar e implementar aplicativos para solucionar y mejorar el desarrollo interno.",
+        "Mantener y actualizar los aplicativos internos de la institución."
+      ],
+      "highlights": [
+        "Programador Full Stack Developer.",
+        "Desarrollar e implementar aplicativos para solucionar y mejorar el desarrollo interno.",
+        "Mantener y actualizar los aplicativos internos de la institución."
+      ]
+    },
+    {
+      "name": "Dirección General de Centros de Comando, Control y Telecomunicaciones VEN 911",
+      "position": "Especialista Técnico.",
+      "url": "",
+      "startDate": "01/02/2019",
+      "endDate": "12/08/2019",
+      "address": "Caracas - Bellas Artes",
+      "summary": [
+        "Inducción y adiestramiento del personal asignado para Técnico de cámaras.",
+        "Inducción y adiestramiento del personal asignado para Soporte Técnico.",
+        "Revisión y mantenimiento de los diversos sistemas del área de tecnología."
+      ],
+      "highlights": [
+        "Inducción y adiestramiento del personal asignado para Técnico de cámaras.",
+        "Inducción y adiestramiento del personal asignado para Soporte Técnico.",
+        "Revisión y mantenimiento de los diversos sistemas del área de tecnología."
+      ]
+    },
+    {
+      "name": "Dirección General de Centros de Comando, Control y Telecomunicaciones VEN 911",
+      "position": "Soporte Técnico",
+      "url": "",
+      "startDate": "30/06/2018",
+      "endDate": "01/02/2019",
+      "address": "Caracas - Bellas Artes",
+      "symmary": [
+        "Revisión y mantenimiento de los equipo tecnológico.",
+        "Instalación de software propios o programas de los periféricos.",
+        "Instalación y mantenimiento de los sistemas de SIGECOF y SIGEFIRRHH.",
+        "Revisión de los diversos servidores del área tecnología."
+      ],
+      "highlights": [
+        "Revisión y mantenimiento del equipo tecnológico.",
+        "Instalación de software propio o programas de los periféricos.",
+        "Instalación y mantenimiento de los sistemas de SIGECOF y SIGEFIRRHH.",
+        "Revisión de los diversos servidores del área tecnología."
+      ]
+    },
+    {
+      "name": "Dirección General de Centros de Comando, Control y Telecomunicaciones VEN 911",
+      "position": "Técnico de Cámaras",
+      "url": "",
+      "startDate": "29/10/2017",
+      "endDate": "30/06/2018",
+      "address": "Caracas - La California",
+      "summary": [
+        "Instalación y remoción del sistema de cámaras.",
+        "Revisión y mantenimiento de las cámaras.",
+        "Mantenimiento del área eléctrica y la red de cableado del sistema de cámaras."
+      ],
+      "highlights": [
+        "Instalación y remoción del sistema de cámaras.",
+        "Revisión y mantenimiento de las cámaras.",
+        "Mantenimiento del área eléctrica y la red de cableado del sistema de cámaras."
+      ]
+    },
+    {
+      "name": "Dirección General de Centros de Comando, Control y Telecomunicaciones VEN 911",
+      "position": "Pasante de la carrera de TSU en Análisis y Diseño de Sistemas",
+      "url": "",
+      "startDate": "26/06/2017",
+      "endDate": "18/09/2017",
+      "address": "Caracas - La California",
+      "summary": [
+        "Investigar y resolver problemas técnicos o desarrollar tecnologías y nuevos productos, como complementos de los estudios de sus respectivas carreras.",
+        ""
+      ],
+      "highlights": [
+        "Investigar y resolver problemas técnicos para desarrollar tecnologías y nuevos productos, como complementos de los estudios de la respectiva carrera.",
+        ""
+      ]
+    }
+  ],
+
+  "skills": [
+    {
+      "name": "Web Development",
+      "level": "Master",
+      "keywords": ["HTML", "CSS", "JavaScript"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Project",
+      "isActive": true,
+      "description": "Description...",
+      "highlights": ["Won award at AIHacks 2016"],
+      "url": "https://project.com/"
+    }
+  ],
+
+  "education": [
+    {
+      "institution": "University",
+      "url": "https://institution.com/",
+      "area": "Software Development",
+      "studyType": "Bachelor",
+      "startDate": "2011-01-01",
+      "endDate": "2013-01-01",
+      "score": "4.0",
+      "courses": ["DB1101 - Basic SQL"]
+    }
+  ],
+  "references": [
+    {
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }
+  ]
+}

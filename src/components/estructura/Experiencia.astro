@@ -2,6 +2,48 @@
 import Section from "../Section.astro"
 import { work } from "../../jsons/cv-AP.json"
 ---
-<Section title="Experiencia Profesional">
+<Section  title="Experiencia Profesional">
+  <div id="experiencia">
+  {
+    work.map( ({name, startDate, endDate, address, position, summary, highlights}) => {        
+      return(
+        <div>
+          <time datetime={startDate}>De {startDate}</time>
+          <time datetime={endDate ?? "actualmente" }> { endDate? `Al ${endDate}` : "Actualmente" }</time>
+          <p>{address}</p>
+        </div>
+        <dir>
+          <h3>{name}</h3>
+          <h4>Cargo: {position}</h4>
+          <ul>
+              {
+                summary.map((dato)=>{
+                  return (<li>- {dato}</li>)
+                })
+              }
+          </ul>
+        </dir>
+            
+      )
+    })
+  }
+  </div>
   
+ 
 </Section>
+<style>
+  #experiencia{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 1rem;
+
+  }
+  h3{
+      font-size: 1rem;
+  }
+  h4{
+      font-size: .8rem;
+      opacity: 40%;
+  }
+
+</style>

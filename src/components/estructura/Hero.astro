@@ -85,6 +85,25 @@ const SOCIAL_ICONS: Record<string, any> = {
 </Section>
 
 <style>
+  @keyframes DAQM3D {
+    from {
+      transform: translateX(10px);
+    }
+    to {
+      transform: translateX(-10px);
+    }
+  }
+  @keyframes social {
+    from {
+      transform: rotate(25deg);
+    }
+    50%{
+      transform: rotate(-25deg);
+    }
+    to {
+      transform: rotate(0);
+    }
+  }
   .container {
     display: flex;
     flex-direction: row;
@@ -98,12 +117,12 @@ const SOCIAL_ICONS: Record<string, any> = {
         font-size: 1.8rem;
         svg{
           margin: auto 5px;  
-          transition: transform .3s ease-in-out;
         }
       }
       :is(h1:hover) svg{
-          transform: translateX(10px);
+        animation: 2s infinite alternate DAQM3D
       }
+      
       h2 {
         color: #444;
         font-weight: 500;
@@ -133,10 +152,13 @@ const SOCIAL_ICONS: Record<string, any> = {
       border-radius: 5px;
       transition: background .3s ease-in-out, border .5s ease-in-out;
     }
+
     a:hover {
       background: #5bfa5b;
       border: 1.5px solid #18193f;
-      
+      svg{
+        animation: 1s linear  social;
+      }
     }
   }
 

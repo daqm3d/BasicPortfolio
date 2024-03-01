@@ -3,27 +3,35 @@ import Section from "../Section.astro"
 import { work } from "../../jsons/cv-AP.json"
 ---
 <Section  title="Experiencia Profesional">
-  <div id="experiencia">
+   <div id="experiencia">
   {
     work.map( ({name, startDate, endDate, address, position, summary, highlights}) => {        
       return(
+        <article>
+          <header>
+            <time datetime={startDate}>De {startDate}</time>
+            <time datetime={endDate ?? "actualmente" }> { endDate? `Al ${endDate}` : "Actualmente" }</time>
+            <p>{address}</p>
+          </header>
+          <footer>
+            <h3>{name}</h3>
+            <h4>Cargo: {position}</h4>
+            <ul>
+                {
+                  summary.map((dato)=>{
+                    return (<li>- {dato}</li>)
+                 })
+                }
+            </ul>
+          </footer>
+        </article>
+        /*
         <div>
-          <time datetime={startDate}>De {startDate}</time>
-          <time datetime={endDate ?? "actualmente" }> { endDate? `Al ${endDate}` : "Actualmente" }</time>
-          <p>{address}</p>
         </div>
         <dir>
-          <h3>{name}</h3>
-          <h4>Cargo: {position}</h4>
-          <ul>
-              {
-                summary.map((dato)=>{
-                  return (<li>- {dato}</li>)
-                })
-              }
-          </ul>
+        
         </dir>
-            
+          */  
       )
     })
   }
@@ -32,11 +40,10 @@ import { work } from "../../jsons/cv-AP.json"
  
 </Section>
 <style>
-  #experiencia{
+  article{
     display: grid;
     grid-template-columns: 1fr 5fr;
     gap: 1rem;
-
   }
   h3{
       font-size: 1rem;

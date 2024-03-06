@@ -142,9 +142,65 @@
 
   "skills": [
     {
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": ["HTML", "CSS", "JavaScript"]
+      "name": "HTML5",
+      "level": "",
+      "keywords": [
+        "Lenguajes y Framewor",
+        "fronten"
+      ]
+    },
+    {
+      "name": "CSS3",
+      "level": "",
+      "keywords": [
+        "Lenguajes y Framewor",
+        "fronten"
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "level": "",
+      "keywords": [
+        "Lenguajes y Framewor",
+        "fronten"
+      ]
+    },
+    {
+      "name": "VueJS",
+      "level": "",
+      "keywords": [
+        "Lenguajes y Framework",
+        "fronten"
+      ]
+    },
+    {
+      "name": "SQL",
+      "level": "",
+      "keywords": [
+        "Lenguajes y Framework",
+        "backen"
+      ]
+    },
+    {
+      "name": "PHP8",
+      "level": "",
+      "keywords": [
+        "Lenguajes y Framework",
+        "backen"
+      ]
+    },
+    {
+      "name": "Laravel",
+      "level": "",
+      "keywords": [
+        "Lenguajes y Framework",
+        "backen"
+      ]
+    },
+    {
+      "name": "WordPress",
+      "level": "",
+      "keywords": ["Lenguajes y Framework", "cms"]
     }
   ],
   "languages": [

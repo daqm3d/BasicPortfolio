@@ -1,6 +1,33 @@
 ---
 import Section from "../Section.astro";
+import { skills } from "../../jsons/cv-AP.json"
+import type { Code } from "astro:components";
 
+
+/* {
+  if( {keywords[0]} == "Lenguajes y Framework") {
+    
+  }
+}*/
 ---
 <Section title="Conocimientos">
+  <ul>
+    Lenguajes y Framework
+    {
+      skills.map(({name, keywords}) =>(
+        <li>
+          <span>{name}</span>
+        </li>
+      ))
+    }
+  </ul>
+  <ul>
+    {
+      skills.map(({name}) =>(
+        <li>
+          <span>{name}</span>
+        </li>
+      ))
+    }
+  </ul>
 </Section>

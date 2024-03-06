@@ -25,32 +25,49 @@ import { work } from "../../jsons/cv-AP.json"
             </ul>
           </footer>
         </article>
-        /*
-        <div>
-        </div>
-        <dir>
-        
-        </dir>
-          */  
       )
     })
   }
-  </div>
-  
- 
+  </div> 
 </Section>
 <style>
-  article{
-    display: grid;
-    grid-template-columns: 1fr 5fr;
+  div{
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
   }
-  h3{
-      font-size: 1rem;
+  article{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 1rem;
+    header{
+      display: flex;
+      flex-direction: column;
+    }
+    h3{
+        font-size: 1rem;
+    }
+    h4, header{
+        font-size: .8rem;
+        opacity: 40%;
+        font-weight: 500;
+    }
+    li{
+      color: #444;
+      letter-spacing: -0.05rem;
+    }
   }
-  h4{
-      font-size: .8rem;
-      opacity: 40%;
+ @media (width < 620px) {
+  article{
+    grid-template-columns: 1fr;
+    header:nth-child(1){
+      grid-row: 2;
+    }
+    
+    header{
+      flex-direction: row;
+      gap: 1.5rem;
+    }
   }
-
+ }
 </style>

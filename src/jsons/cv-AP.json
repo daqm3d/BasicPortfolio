@@ -145,7 +145,7 @@
       "name": "HTML5",
       "level": "",
       "keywords": [
-        "Lenguajes y Framewor",
+        "Lenguajes y Framework",
         "fronten"
       ]
     },
@@ -153,7 +153,7 @@
       "name": "CSS3",
       "level": "",
       "keywords": [
-        "Lenguajes y Framewor",
+        "Lenguajes y Framework",
         "fronten"
       ]
     },
@@ -161,7 +161,7 @@
       "name": "JavaScript",
       "level": "",
       "keywords": [
-        "Lenguajes y Framewor",
+        "Lenguajes y Framework",
         "fronten"
       ]
     },
@@ -201,12 +201,80 @@
       "name": "WordPress",
       "level": "",
       "keywords": ["Lenguajes y Framework", "cms"]
+    },
+    {
+      "name": "MySQL",
+      "level": "",
+      "keywords": [
+        "Herramientas y Tecnologías",
+        "BD"
+      ]
+    },
+    {
+      "name": "PostgreSQL",
+      "level": "",
+      "keywords": [
+        "Herramientas y Tecnologías",
+        "BD"
+      ]
+    },
+    {
+      "name": "Proxmox",
+      "level": "",
+      "keywords": [
+        "Herramientas y Tecnologías",
+        "Virtualization"
+      ]
+    },
+    {
+      "name": "Docker",
+      "level": "",
+      "keywords": [
+        "Herramientas y Tecnologías",
+        "Virtualization"
+      ]
+    },
+    {
+      "name": "Linux",
+      "level": "",
+      "keywords": [
+        "Herramientas y Tecnologías",
+        "Sistema Operativo"
+      ]
+    },
+    {
+      "name": "Apache",
+      "level": "",
+      "keywords": [
+        "Herramientas y Tecnologías",
+        "Server"
+      ]
+    },
+    {
+      "name": "Nginx",
+      "level": "",
+      "keywords": [
+        "Herramientas y Tecnologías",
+        "Server"
+      ]
+    },
+    {
+      "name": "GIT",
+      "level": "",
+      "keywords": [
+        "Herramientas y Tecnologías",
+        "Manejador de Versiones"
+      ]
     }
   ],
   "languages": [
     {
-      "language": "English",
-      "fluency": "Native speaker"
+      "language": "Español",
+      "fluency": "Nativo"
+    },
+    {
+      "language": "Ingles",
+      "fluency": "Básico"
     }
   ],
   "certificates": [

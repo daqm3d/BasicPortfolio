@@ -23,50 +23,56 @@ const ver = uniqueKeywords.forEach( (tag) => {
 })
 console.log(ver);*/
 ---
-<Section title="Conocimientos">
-  {
-    filter.map((data) =>(
-      
-      <ul>
-        <h3>- {data.key}:</h3>
-        {
-          data.tap.map(({name}) =>(
-            <li>
-              <span>{name}</span>
-            </li>
-          ))
-        }
-      </ul>
-    ))
-  }
-  <ul>
-    <h3>- Idiomas:</h3>
+<Section id="Conocimientos" title="Conocimientos">
+  <dir>
     {
-      languages.map(({language, fluency}) =>[
-      <li>
-        <span>{language} {fluency}</span>
-      </li>
-      ])
+      filter.map((data) =>(
+        <ul>
+          <h3>- {data.key}:</h3>
+          {
+            data.tap.map(({name}) =>(
+              <li>
+                <span>{name}</span>
+              </li>
+            ))
+          }
+        </ul>
+      ))
     }
-  </ul>
+    <ul>
+      <h3>- Idiomas:</h3>
+      {
+       languages.map(({language, fluency}) =>[
+        <li>
+          <span>{language} {fluency}</span>
+        </li>
+       ])
+      }
+    </ul>
+  </dir>
+    
   
 </Section>
 
 <style>
-  h3{    
-    font-size: 1rem;
-    opacity: 40%;
-    font-weight: 500;
-  }
+dir{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   ul{
     display: inline-flex;
-    margin-bottom: 1rem;
     flex-wrap: wrap;
     gap: .5rem;
+    h3{    
+      font-size: 1rem;
+      opacity: 40%;
+      font-weight: 500;
+    }
     li{
       border-radius: .5rem;
       background: #eee;
       padding: .2rem .6rem;
     }
   }
+}
 </style>

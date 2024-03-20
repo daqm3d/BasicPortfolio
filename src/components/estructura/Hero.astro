@@ -26,7 +26,7 @@ const SOCIAL_ICONS: Record<string, any> = {
 };
 ---
 
-<Section>
+<Section id="Hero" >
   <div class="container">
     <div class="info">
       <h1>{name} <Code/> {alias}</h1>
@@ -104,6 +104,7 @@ const SOCIAL_ICONS: Record<string, any> = {
       transform: rotate(0);
     }
   }
+
   .container {
     display: flex;
     flex-direction: row;
@@ -152,7 +153,6 @@ const SOCIAL_ICONS: Record<string, any> = {
       border-radius: 5px;
       transition: background .3s ease-in-out, border .5s ease-in-out;
     }
-
     a:hover {
       background: #5bfa5b;
       border: 1.5px solid #18193f;
@@ -161,7 +161,6 @@ const SOCIAL_ICONS: Record<string, any> = {
       }
     }
   }
-
   img {
     width: 128px;
     border-radius: 16px;

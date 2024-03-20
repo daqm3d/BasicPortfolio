@@ -1,5 +1,89 @@
 ---
 import Section from "@/components/Section.astro"
+import { references } from "@/jsons/cv-AP.json"
+import Mail from '@/icons/Mail.astro';
+import Phone from '@/icons/Phone.astro';
+
 ---
-<Section title="Referencias">
+<Section id="Referencias" title="Referencias">
+  {
+    references.map( ({name, reference, phone, email}) => {        
+      return(
+        <article>
+          <header>
+            <h3>{name}</h3>
+            <h4>{reference}</h4>
+          </header>
+          <footer>
+            {
+              email && (
+                <a
+                  href={`mailto:${email}`}
+                  title={`Contacte con ${name} mediante el correo ${email}`}
+                  target="_blank"
+                >
+                  <Mail />
+                </a>
+              )
+            }
+            {
+              phone && (
+                <a
+                  href={`tel:${phone}`}
+                  title={`Contacte con ${name} mediante el numero ${phone}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Phone />
+                </a>
+              )
+            }
+          </footer>
+        </article>
+      )
+    })
+  }
 </Section>
+<style>
+  @keyframes social {
+    from {
+      transform: rotate(25deg);
+    }
+    50%{
+      transform: rotate(-25deg);
+    }
+    to {
+      transform: rotate(0);
+    }
+  }
+  h3{
+    font-size: 1rem;
+  }
+  h4{
+    font-size: .8rem;
+    opacity: 40%;
+    font-weight: 500;
+  }
+  footer {
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+    a {
+      padding: 5px;
+      color: #777;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #cfcfcfcb;
+      border-radius: 5px;
+      transition: background .3s ease-in-out, border .5s ease-in-out;
+    }
+    a:hover {
+      background: #5bfa5b;
+      border: 1.5px solid #18193f;
+      svg{
+        animation: 1s linear  social;
+      }
+    }
+  }
+</style>

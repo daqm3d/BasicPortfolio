@@ -33,5 +33,36 @@ main{
 	padding: 4rem;
 	margin: auto;
 	width: 100%;
+	max-width: 800px;
+	display: grid;
+	grid-template-areas: 
+		"Hero Hero"
+		"Experiencia Experiencia"
+		"Conocimientos Cursos"
+		"Proyectos Proyectos"
+		"Educacion Referencias";
+		grid-template-columns: repeat(2,1fr) ;
+		grid-column-gap: 1rem;
+	section[id="Hero"]{
+		grid-area: Hero;
+	}
+	section[id="Experiencia"]{
+		grid-area: Experiencia;
+	}
+	section[id="Conocimientos"]{
+		grid-area: Conocimientos;
+	}
+	section[id="Cursos"]{
+		grid-area: Cursos;
+	}
+	section[id="Proyectos"]{
+		grid-area: Proyectos;
+	}
+	section[id="Educacion"]{
+		grid-area: Educacion;
+	}
+	section[id="Referencias"]{
+		grid-area: Referencias;
+	}
 }
 </style>

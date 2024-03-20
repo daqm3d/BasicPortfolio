@@ -166,14 +166,6 @@
       ]
     },
     {
-      "name": "VueJS",
-      "level": "",
-      "keywords": [
-        "Lenguajes y Framework",
-        "fronten"
-      ]
-    },
-    {
       "name": "SQL",
       "level": "",
       "keywords": [
@@ -182,15 +174,7 @@
       ]
     },
     {
-      "name": "PHP8",
-      "level": "",
-      "keywords": [
-        "Lenguajes y Framework",
-        "backen"
-      ]
-    },
-    {
-      "name": "Laravel",
+      "name": "PHP",
       "level": "",
       "keywords": [
         "Lenguajes y Framework",
@@ -203,11 +187,51 @@
       "keywords": ["Lenguajes y Framework", "cms"]
     },
     {
+      "name": "Laravel",
+      "level": "",
+      "keywords": [
+        "Lenguajes y Framework",
+        "backen"
+      ]
+    },
+    {
+      "name": "VueJS",
+      "level": "",
+      "keywords": [
+        "Lenguajes y Framework",
+        "fronten"
+      ]
+    },
+    {
+      "name": "Linux",
+      "level": "",
+      "keywords": [
+        "Herramientas y Tecnologías",
+        "Sistema Operativo"
+      ]
+    },
+    {
       "name": "MySQL",
       "level": "",
       "keywords": [
         "Herramientas y Tecnologías",
         "BD"
+      ]
+    },
+    {
+      "name": "Apache",
+      "level": "",
+      "keywords": [
+        "Herramientas y Tecnologías",
+        "Server"
+      ]
+    },
+    {
+      "name": "GIT",
+      "level": "",
+      "keywords": [
+        "Herramientas y Tecnologías",
+        "Manejador de Versiones"
       ]
     },
     {
@@ -227,30 +251,6 @@
       ]
     },
     {
-      "name": "Docker",
-      "level": "",
-      "keywords": [
-        "Herramientas y Tecnologías",
-        "Virtualization"
-      ]
-    },
-    {
-      "name": "Linux",
-      "level": "",
-      "keywords": [
-        "Herramientas y Tecnologías",
-        "Sistema Operativo"
-      ]
-    },
-    {
-      "name": "Apache",
-      "level": "",
-      "keywords": [
-        "Herramientas y Tecnologías",
-        "Server"
-      ]
-    },
-    {
       "name": "Nginx",
       "level": "",
       "keywords": [
@@ -259,11 +259,11 @@
       ]
     },
     {
-      "name": "GIT",
+      "name": "Docker",
       "level": "",
       "keywords": [
         "Herramientas y Tecnologías",
-        "Manejador de Versiones"
+        "Virtualization"
       ]
     }
   ],
@@ -278,6 +278,12 @@
     }
   ],
   "certificates": [
+    {
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    },
     {
       "name": "Certificate",
       "date": "2021-11-07",
@@ -298,20 +304,42 @@
 
   "education": [
     {
-      "institution": "University",
-      "url": "https://institution.com/",
-      "area": "Software Development",
-      "studyType": "Bachelor",
-      "startDate": "2011-01-01",
-      "endDate": "2013-01-01",
-      "score": "4.0",
-      "courses": ["DB1101 - Basic SQL"]
+      "institution": "Universidad: U.N.A - Caracas",
+      "url": "https://unaseg.com",
+      "area": "Ingeniería de Sistemas",
+      "studyType": "Ingeniería",
+      "startDate": "2022",
+      "endDate": null
+    },
+    {
+      "institution": "Universidad: U.N.E.F.A - Guariré",
+      "url": "https://unefa.gob.ve/",
+      "area": "Técnico Superior Universitario en Análisis y Diseño de Sistemas",
+      "studyType": "TSU",
+      "startDate": "2013",
+      "endDate": "2018"
+    },
+    {
+      "institution": "Colegio: C.E.P.A - Guarenas",
+      "url": "",
+      "area": "Educación Media General en Ciencias Básicas y Tecnología",
+      "studyType": "Bachiller",
+      "startDate": "2000",
+      "endDate": "2013"
     }
   ],
   "references": [
     {
-      "name": "Jane Doe",
-      "reference": "Reference…"
+      "name": "Jose Sanchez",
+      "reference": "SUNAD | Coordinador de Redes y Servidores",
+      "phone": "+58 4242344888",
+      "email": "jsanchez@gmail.com"
+    },
+    {
+      "name": "Taina Arvelo",
+      "reference": "VEN911 | Coordinadora de Sistemas",
+      "phone": "+58 4241679693",
+      "email": "tainarvelo@gmail.com"
     }
   ]
 }

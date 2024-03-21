@@ -3,7 +3,6 @@ import Section from "@/components/Section.astro"
 import { work } from "@/jsons/cv-AP.json"
 ---
 <Section id="Experiencia" title="Experiencia Profesional">
-   <div id="experiencia">
   {
     work.map( ({name, startDate, endDate, address, position, summary, highlights}) => {        
       return(
@@ -28,14 +27,8 @@ import { work } from "@/jsons/cv-AP.json"
       )
     })
   }
-  </div> 
 </Section>
 <style>
-  div{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
   article{
     display: grid;
     grid-template-columns: 1fr 4fr;

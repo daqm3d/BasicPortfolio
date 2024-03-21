@@ -1,9 +1,23 @@
 ---
 import Section from "@/components/Section.astro"
-
+import { certificates } from '@/jsons/cv-AP.json';
 ---
-
 <Section id="Cursos" title="Cursos">
+  {
+    certificates.map( ({name, date, issuer, url}) => {        
+      return(
+        <article>
+          <header>
+            <a href={url}><h3>Titulo: {name}</h3></a>
+            <h4>{issuer}</h4>
+          </header>
+          <footer>
+            <time datetime={`$[startDate - endDate ?? "actualmente" ]`} >Año { date? ` ${date}` : "Actualmente" }</time>
+          </footer>
+        </article>
+      )
+    })
+  }
 </Section>
 <style>
   

@@ -24,41 +24,33 @@ const ver = uniqueKeywords.forEach( (tag) => {
 console.log(ver);*/
 ---
 <Section id="Conocimientos" title="Conocimientos">
-  <dir>
+  {
+    filter.map((data) =>(
+      <ul>
+        <h3>- {data.key}:</h3>
+        {
+          data.tap.map(({name}) =>(
+            <li>
+              <span>{name}</span>
+            </li>
+          ))
+        }
+      </ul>
+    ))
+  }
+  <ul>
+    <h3>- Idiomas:</h3>
     {
-      filter.map((data) =>(
-        <ul>
-          <h3>- {data.key}:</h3>
-          {
-            data.tap.map(({name}) =>(
-              <li>
-                <span>{name}</span>
-              </li>
-            ))
-          }
-        </ul>
-      ))
+      languages.map(({language, fluency}) =>[
+      <li>
+        <span>{language} {fluency}</span>
+      </li>
+      ])
     }
-    <ul>
-      <h3>- Idiomas:</h3>
-      {
-       languages.map(({language, fluency}) =>[
-        <li>
-          <span>{language} {fluency}</span>
-        </li>
-       ])
-      }
-    </ul>
-  </dir>
-    
-  
+  </ul>
 </Section>
 
 <style>
-dir{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
   ul{
     display: inline-flex;
     flex-wrap: wrap;
@@ -74,5 +66,4 @@ dir{
       padding: .2rem .6rem;
     }
   }
-}
 </style>

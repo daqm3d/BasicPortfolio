@@ -3,7 +3,6 @@ import Section from "@/components/Section.astro"
 import { education } from "@/jsons/cv-AP.json"
 ---
 <Section id="Educacion" title="Educación">
-  <div>
   {
     education.map( ({area, institution, startDate, endDate}) => {        
       return(
@@ -19,14 +18,9 @@ import { education } from "@/jsons/cv-AP.json"
       )
     })
   }
-  </div>
 </Section>
 <style>
-  div{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+
   article{
     display: grid;
     grid-template-columns: 1fr 2fr;

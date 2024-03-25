@@ -18,12 +18,12 @@
     "profiles": [
       {
         "network": "LinkedIn",
-        "usernam": "daqm3d",
+        "usernam": "DAQM3D-DEARQUIMA",
         "url": "https://"
       },
       {
         "network": "GitHub",
-        "usernam": "daqm3d",
+        "usernam": "DAQM·D",
         "url": "https://"
       }
     ]
@@ -279,31 +279,71 @@
   ],
   "certificates": [
     {
-      "name": "Certificate",
+      "name": "Certificate de lo que sea",
       "date": "2021-11-07",
-      "issuer": "Company",
+      "issuer": "Company representativa",
       "url": "https://certificate.com"
     },
     {
-      "name": "Certificate",
+      "name": "Certificate de lo que sea",
       "date": "2021-11-07",
-      "issuer": "Company",
+      "issuer": "Company representativa",
       "url": "https://certificate.com"
     },
     {
-      "name": "Certificate",
+      "name": "Certificate de lo que sea",
       "date": "2021-11-07",
-      "issuer": "Company",
+      "issuer": "Company representativa",
       "url": "https://certificate.com"
     }
   ],
 
   "projects": [
     {
-      "name": "Project",
+      "name": "Intranet",
       "isActive": true,
-      "description": "Description...",
-      "highlights": ["Won award at AIHacks 2016"],
+      "description": "Aplicativo de gestion interna para manejar diversas funcionalidades del area de RRHH",
+      "highlights": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Laravel",
+        "MariaDB"
+      ],
+      "url": "https://intranet.sunad.gob.ve/"
+    },
+    {
+      "name": "Project OVD",
+      "isActive": true,
+      "description": "Aplicativo para gestion del manejo de sustancias ilegales incautadas por los diversos organismos del estado, que se reportan a la SUNAD",
+      "highlights": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "php"
+      ],
+      "url": "https://incautaciones.sunad.gob.ve/"
+    },
+    {
+      "name": "WEB SUNAD",
+      "isActive": true,
+      "description": "Pagina web que permite difundir los avances en materia institucional de la SUNAD",
+      "highlights": [
+        "HTML5",
+        "CSS3",
+        "WordPress"
+      ],
+      "url": "https://www2.sunad.gob.ve/"
+    },
+    {
+      "name": "WEB VEN911",
+      "isActive": true,
+      "description": "Pagina web que permite difundir los avances en materia institucional del VEN911",
+      "highlights": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
       "url": "https://project.com/"
     }
   ],

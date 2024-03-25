@@ -1,24 +1,55 @@
 ---
-import Section from "@/components/Section.astro"
+import Section from '@/components/Section.astro';
 import { certificates } from '@/jsons/cv-AP.json';
 ---
+
 <Section id="Cursos" title="Cursos">
-  {
-    certificates.map( ({name, date, issuer, url}) => {        
-      return(
-        <article>
-          <header>
-            <a href={url}><h3>Titulo: {name}</h3></a>
-            <h4>{issuer}</h4>
-          </header>
-          <footer>
-            <time datetime={`$[startDate - endDate ?? "actualmente" ]`} >Año { date? ` ${date}` : "Actualmente" }</time>
-          </footer>
-        </article>
+  <ul>
+    {
+      certificates.map(
+        ({ name, date, issuer, url }) => {
+          return (
+            <li>
+              <article>
+                <header>
+                  <a href={url}>
+                    <h3>{name}</h3>
+                  </a>
+                  <h4>{issuer}</h4>
+                </header>
+                <footer>
+                  <time
+                    datetime={`$[startDate - endDate ?? "actualmente" ]`}
+                  >
+                    Año{' '}
+                    {date
+                      ? ` ${date}`
+                      : 'Actualmente'}
+                  </time>
+                </footer>
+              </article>
+            </li>
+          );
+        }
       )
-    })
-  }
+    }
+  </ul>
 </Section>
 <style>
-  
+  ul {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(240px, 1fr)
+    );
+    gap: 1rem;
+    h3 {
+      font-size: 1rem;
+    }
+    h4 {
+      font-size: 0.8rem;
+      opacity: 40%;
+      font-weight: 500;
+    }
+  }
 </style>

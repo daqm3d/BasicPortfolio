@@ -88,6 +88,16 @@ const SOCIAL_ICONS: Record<string, any> = {
             <span><Phone />{phone}</span>
           )
         }
+        {
+          profiles.map(
+            ({ network, url }) => {
+              const Icon = SOCIAL_ICONS[network];
+              return (
+                <span><Icon />{url}</span>
+              );
+            }
+          )
+        }
       </footer>
     </div>
     <figure>
@@ -180,11 +190,20 @@ const SOCIAL_ICONS: Record<string, any> = {
     border-radius: 16px;
   }
   .print{
-    display: none;
+    display:none;
   }
+  
 @media print {
   .print{
     display:block;
+  }
+  .notPrint{
+    display:none;
+  }
+  footer.print{
+    display: grid;
+    grid-template-columns: repeat( auto-fit,minmax(200px,1fr));
+    gap: .5rem 1rem;
   }
 }
 </style>

@@ -1,11 +1,51 @@
-<footer>
-
+<footer class="notPrint">
+  Pulsa<kbd>Cmd</kbd> + <kbd>K</kbd> para abrir la
+  paleta de comandos
 </footer>
+<ninja-keys class="notPrint"></ninja-keys>
 
 <script>
+  /*import 'ninja-keys';
 
+  const ninja =
+    document.querySelector('ninja-keys');
+  if (ninja != null) {
+    ninja.data = [
+      {
+        id: 'Projects',
+        title: 'Open Projects',
+        hotkey: 'ctrl+N',
+        icon: 'apps',
+        section: 'Projects',
+        handler: () => {
+          alert('tu inicio a conducir');
+        },
+      },
+    ];
+  }*/
 </script>
 
 <style>
-  
+  footer {
+    background: #fdfdfd;
+    border-top: 1px solid #eee;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    padding-block: 0.6rem;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  kbd {
+    background-color: #eee;
+    border: 1px solid #cfcfcfcb;
+    border-radius: 4px;
+    padding: 2px 4px;
+    margin-left: 0.5rem;
+    font-weight: 700;
+    color: #333;
+    box-shadow:
+      0 1px 1px rgba(0, 0, 0, 0.2),
+      0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+  }
 </style>

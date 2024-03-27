@@ -27,9 +27,8 @@ import Manager from '@/components/Manager.astro';
       <Educacion />
       <Referencias />
     </div>
-
-    <Manager />
   </main>
+  <Manager />
 </Layout>
 
 <style>
@@ -48,10 +47,19 @@ import Manager from '@/components/Manager.astro';
       );
       grid-column-gap: 2rem;
     }
+    .print {
+      display: none;
+    }
   }
   @media print {
     main {
       padding: 0.5rem 1rem;
+      .print {
+        display: block;
+      }
+      .notPrint {
+        display: none;
+      }
     }
   }
 </style>

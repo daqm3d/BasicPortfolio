@@ -68,11 +68,16 @@ console.log(ver);*/
       font-weight: 500;
     }
     li {
-      /*  border: 2px solid #eee;*/
-
       border-radius: 0.5rem;
       background: #eee;
       padding: 0.2rem 0.6rem;
+    }
+  }
+
+  @media print {
+    li {
+      border: 2px solid #eee;
+      padding: 0.1rem 0.3rem;
     }
   }
 </style>

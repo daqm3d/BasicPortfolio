@@ -4,53 +4,77 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Portfolio Developer Full Stack" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Portfolio Developer Full Stack"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root{
-		
-	}
-	html{
-		scrollbar-color: #5bfa5b  #18193f;
-		font-family:   "Courier New";
-		letter-spacing: -0.025rem;
-		background: #fafafa
-	}
-	a{
-		text-decoration: none;
-	}
-	ul{
-		list-style: none;
-	}
-	*, *::before, *::after{
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
-	}
+  :root {
+  }
+  html {
+    scrollbar-color: #5bfa5b #18193f;
+    font-family: 'Courier New';
+    letter-spacing: -0.025rem;
+    background: #fafafa;
+  }
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-	h1, h2, h3, h4{
-		font-family: serif;
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: serif;
     text-wrap: balance;
-	}
-	time,p,li{
-		font-size: .8rem;
-		line-height: 1.5;
-		text-wrap: pretty;
-	}
-	/*@media (prefers-color-scheme: dark){
+  }
+  time,
+  p,
+  li {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+  /*@media (prefers-color-scheme: dark){
 		html{
 			background: #000;
 			color: #fff;
 		}
 	}*/
+  @media print {
+    .notPrint {
+      display: none;
+    }
+  }
 </style>

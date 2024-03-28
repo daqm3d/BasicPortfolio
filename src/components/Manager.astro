@@ -1,31 +1,113 @@
+---
+import { basics } from '@/jsons/cv-AP.json';
+import Mail from '@/icons/Mail.astro';
+import Phone from '@/icons/Phone.astro';
+import GitHub from '@/icons/GitHub.astro';
+import LinkedIn from '@/icons/LinkedIn.astro';
+
+const { profiles } = basics;
+const SOCIAL_ICONS = {
+  GitHub,
+  LinkedIn,
+};
+
+const info = profiles.map(({ network, usernam, url }) => {
+  const icon = SOCIAL_ICONS[network];
+  const filtroLetra = network[0].toLocaleUpperCase();
+  return {
+    id: network,
+    section: 'Redes Sociales',
+    title: `Visitar ${network} de ${usernam}`,
+    hotkey: `ctrl+${filtroLetra}`,
+    icon,
+    url,
+  };
+});
+---
+
 <footer class="notPrint">
-  Pulsa<kbd>Cmd</kbd> + <kbd>K</kbd> para abrir la
-  paleta de comandos
+  Pulsa<kbd>Cmd</kbd> + <kbd>K</kbd> para abrir la paleta de
+  comandos
 </footer>
-<ninja-keys class="notPrint"></ninja-keys>
-
+<ninja-keys
+  class="notPrint"
+  placeholder="type a command or search..."
+  data-info={JSON.stringify(info)}></ninja-keys>
 <script>
-  /*import 'ninja-keys';
+  import 'ninja-keys';
 
-  const ninja =
-    document.querySelector('ninja-keys');
+  const ninja = document.querySelector('ninja-keys');
   if (ninja != null) {
+    const info = ninja.getAttribute('data-info') ?? '[]';
+    const parseInfo = JSON.parse(info);
+    const data = parseInfo.map((item) => {
+      return {
+        ...item,
+        handler: () => {
+          window.open(item.url, '_blank');
+        },
+      };
+    });
+
     ninja.data = [
       {
-        id: 'Projects',
-        title: 'Open Projects',
-        hotkey: 'ctrl+N',
-        icon: 'apps',
-        section: 'Projects',
+        id: 'print',
+        title: 'Imprimir',
+        hotkey: 'ctrl+p',
+        icon: '',
+        section: 'Acciones',
         handler: () => {
-          alert('tu inicio a conducir');
+          window.print();
         },
       },
+
+      /* para crear un sub menu  */
+      {
+        id: 'Tema',
+        title: 'Cambiar Tema Web',
+        icon: '',
+        children: [
+          'Light Theme',
+          'Dark Theme',
+          'System Theme',
+        ],
+        handler: () => {
+          ninja.open({ parent: 'Tema' });
+          return { keepOpen: true };
+        },
+      },
+      {
+        id: 'Light Theme',
+        title: 'Cambiar  tema a light',
+        icon: '',
+        parent: 'Tema',
+        handler: () => {
+          document.documentElement.classList.remove('dark');
+        },
+      },
+      {
+        id: 'Dark Theme',
+        title: 'Cambiar tema a Dark',
+        icon: '',
+        parent: 'Tema',
+        handler: () => {
+          document.documentElement.classList.add('dark');
+        },
+      },
+      ...data,
     ];
-  }*/
+  }
 </script>
 
 <style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
   footer {
     background: #fdfdfd;
     border-top: 1px solid #eee;
@@ -35,6 +117,13 @@
     padding-block: 0.6rem;
     text-align: center;
     font-size: 0.8rem;
+
+    view-timeline-name: --revealing;
+    view-timeline-axis: block;
+
+    animation: linear 0.3s fadeIn;
+    animation-timeline: --revealing;
+    animation-range: entry 100% cover 10%;
   }
   kbd {
     background-color: #eee;

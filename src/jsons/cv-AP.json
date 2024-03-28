@@ -144,42 +144,27 @@
     {
       "name": "HTML5",
       "level": "",
-      "keywords": [
-        "Lenguajes y Framework",
-        "fronten"
-      ]
+      "keywords": ["Lenguajes y Framework", "fronten"]
     },
     {
       "name": "CSS3",
       "level": "",
-      "keywords": [
-        "Lenguajes y Framework",
-        "fronten"
-      ]
+      "keywords": ["Lenguajes y Framework", "fronten"]
     },
     {
       "name": "JavaScript",
       "level": "",
-      "keywords": [
-        "Lenguajes y Framework",
-        "fronten"
-      ]
+      "keywords": ["Lenguajes y Framework", "fronten"]
     },
     {
       "name": "SQL",
       "level": "",
-      "keywords": [
-        "Lenguajes y Framework",
-        "backen"
-      ]
+      "keywords": ["Lenguajes y Framework", "backen"]
     },
     {
       "name": "PHP",
       "level": "",
-      "keywords": [
-        "Lenguajes y Framework",
-        "backen"
-      ]
+      "keywords": ["Lenguajes y Framework", "backen"]
     },
     {
       "name": "WordPress",
@@ -189,18 +174,12 @@
     {
       "name": "Laravel",
       "level": "",
-      "keywords": [
-        "Lenguajes y Framework",
-        "backen"
-      ]
+      "keywords": ["Lenguajes y Framework", "backen"]
     },
     {
       "name": "VueJS",
       "level": "",
-      "keywords": [
-        "Lenguajes y Framework",
-        "fronten"
-      ]
+      "keywords": ["Lenguajes y Framework", "fronten"]
     },
     {
       "name": "Linux",
@@ -213,18 +192,12 @@
     {
       "name": "MySQL",
       "level": "",
-      "keywords": [
-        "Herramientas y Tecnologías",
-        "BD"
-      ]
+      "keywords": ["Herramientas y Tecnologías", "BD"]
     },
     {
       "name": "Apache",
       "level": "",
-      "keywords": [
-        "Herramientas y Tecnologías",
-        "Server"
-      ]
+      "keywords": ["Herramientas y Tecnologías", "Server"]
     },
     {
       "name": "GIT",
@@ -237,10 +210,7 @@
     {
       "name": "PostgreSQL",
       "level": "",
-      "keywords": [
-        "Herramientas y Tecnologías",
-        "BD"
-      ]
+      "keywords": ["Herramientas y Tecnologías", "BD"]
     },
     {
       "name": "Proxmox",
@@ -253,10 +223,7 @@
     {
       "name": "Nginx",
       "level": "",
-      "keywords": [
-        "Herramientas y Tecnologías",
-        "Server"
-      ]
+      "keywords": ["Herramientas y Tecnologías", "Server"]
     },
     {
       "name": "Docker",
@@ -316,34 +283,21 @@
       "name": "Project OVD",
       "isActive": true,
       "description": "Aplicativo para gestion del manejo de sustancias ilegales incautadas por los diversos organismos del estado, que se reportan a la SUNAD",
-      "highlights": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "php"
-      ],
+      "highlights": ["HTML5", "CSS3", "JavaScript", "php"],
       "url": "https://incautaciones.sunad.gob.ve/"
     },
     {
       "name": "WEB SUNAD",
       "isActive": true,
       "description": "Pagina web que permite difundir los avances en materia institucional de la SUNAD",
-      "highlights": [
-        "HTML5",
-        "CSS3",
-        "WordPress"
-      ],
+      "highlights": ["HTML5", "CSS3", "WordPress"],
       "url": "https://www2.sunad.gob.ve/"
     },
     {
       "name": "WEB VEN911",
       "isActive": true,
       "description": "Pagina web que permite difundir los avances en materia institucional del VEN911",
-      "highlights": [
-        "HTML5",
-        "CSS3",
-        "JavaScript"
-      ],
+      "highlights": ["HTML5", "CSS3", "JavaScript"],
       "url": "https://project.com/"
     }
   ],

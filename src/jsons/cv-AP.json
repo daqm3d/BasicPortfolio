@@ -269,28 +269,43 @@
     {
       "name": "Intranet",
       "isActive": true,
-      "description": "Aplicativo de gestion interna para manejar diversas funcionalidades del area de RRHH",
+      "description": "Aplicativo de gestión interna para manejar diversas funcionalidades del area de RRHH",
       "highlights": [
         "HTML5",
         "CSS3",
         "JavaScript",
         "Laravel",
-        "MariaDB"
+        "MariaDB",
+        "Nginx",
+        "Docker"
       ],
       "url": "https://intranet.sunad.gob.ve/"
     },
     {
       "name": "Project OVD",
       "isActive": true,
-      "description": "Aplicativo para gestion del manejo de sustancias ilegales incautadas por los diversos organismos del estado, que se reportan a la SUNAD",
-      "highlights": ["HTML5", "CSS3", "JavaScript", "php"],
+      "description": "Aplicativo para gestión del manejo de sustancias ilegales incautadas por los diversos organismos del estado, que se reportan a la SUNAD",
+      "highlights": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "php",
+        "MariaDB",
+        "Nginx"
+      ],
       "url": "https://incautaciones.sunad.gob.ve/"
     },
     {
       "name": "WEB SUNAD",
       "isActive": true,
       "description": "Pagina web que permite difundir los avances en materia institucional de la SUNAD",
-      "highlights": ["HTML5", "CSS3", "WordPress"],
+      "highlights": [
+        "HTML5",
+        "CSS3",
+        "WordPress",
+        "MySQL",
+        "Apache"
+      ],
       "url": "https://www2.sunad.gob.ve/"
     },
     {

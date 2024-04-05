@@ -8,9 +8,12 @@ import Proyectos from '@/components/estructura/Proyectos.astro';
 import Educacion from '@/components/estructura/Educacion.astro';
 import Referencias from '@/components/estructura/Referencias.astro';
 import Manager from '@/components/Manager.astro';
+
+import { basics } from '@/jsons/cv-AP.json';
+const { alias, label } = basics;
 ---
 
-<Layout title="DAQM3D">
+<Layout title={`Portfolio de ${alias} - ${label}`}>
   <main>
     <Hero />
 

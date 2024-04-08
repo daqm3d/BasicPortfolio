@@ -1,6 +1,7 @@
 ---
 import Section from '@/components/Section.astro';
 import { projects } from '@/jsons/cv-AP.json';
+import GitHub from '@/icons/GitHub.astro';
 ---
 
 <Section id="Proyectos" title="Proyectos">
@@ -13,6 +14,7 @@ import { projects } from '@/jsons/cv-AP.json';
           description,
           highlights,
           url,
+          repo,
         }) => {
           return (
             <li>
@@ -26,17 +28,22 @@ import { projects } from '@/jsons/cv-AP.json';
                     >
                       {name}
                     </a>
-                    {isActive && (
-                      <span>&bull;</span>
+                    {isActive && <span>&bull;</span>}
+                    {repo && (
+                      <a
+                        href={`${url}`}
+                        title={`Visita el repo del proyecto ${name}`}
+                        target="_blank"
+                      >
+                        <GitHub />
+                      </a>
                     )}
                   </h3>
                   <p>{description}</p>
                 </header>
                 <footer>
                   {highlights.map((highlight) => {
-                    return (
-                      <span>{highlight}</span>
-                    );
+                    return <span>{highlight}</span>;
                   })}
                 </footer>
               </article>
@@ -68,12 +75,32 @@ import { projects } from '@/jsons/cv-AP.json';
       flex: 1;
       margin-bottom: 1rem;
       h3 {
+        display: flex;
         margin-bottom: 0.5rem;
+        gap: 0.5rem;
         a {
           color: #111;
         }
         span {
           color: #5bfa5b;
+        }
+        a:has(svg) {
+          padding: 1px;
+          display: inline-flex;
+          border: 1.5px solid #cfcfcfcb;
+          border-radius: 0.5rem;
+          transition:
+            background 0.3s ease-in-out,
+            border 0.5s ease-in-out;
+
+          margin-inline-start: auto;
+        }
+        a:has(svg):hover {
+          background: #5bfa5b;
+          border: 1.5px solid #18193f;
+          svg {
+            animation: 1s linear social;
+          }
         }
       }
       a:hover {

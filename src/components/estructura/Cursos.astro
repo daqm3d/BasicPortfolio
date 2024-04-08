@@ -6,32 +6,27 @@ import { certificates } from '@/jsons/cv-AP.json';
 <Section id="Cursos" title="Cursos">
   <ul>
     {
-      certificates.map(
-        ({ name, date, issuer, url }) => {
-          return (
-            <li>
-              <article>
-                <header>
-                  <a href={url}>
-                    <h3>{name}</h3>
-                  </a>
-                  <h4>{issuer}</h4>
-                </header>
-                <footer>
-                  <time
-                    datetime={`$[startDate - endDate ?? "actualmente" ]`}
-                  >
-                    Año{' '}
-                    {date
-                      ? ` ${date}`
-                      : 'Actualmente'}
-                  </time>
-                </footer>
-              </article>
-            </li>
-          );
-        }
-      )
+      certificates.map(({ name, date, issuer, url }) => {
+        return (
+          <li>
+            <article>
+              <header>
+                <a href={url}>
+                  <h3>{name}</h3>
+                </a>
+                <h4>{issuer}</h4>
+              </header>
+              <footer>
+                <time
+                  datetime={`$[startDate - endDate ?? "actualmente" ]`}
+                >
+                  Año {date ? ` ${date}` : 'Actualmente'}
+                </time>
+              </footer>
+            </article>
+          </li>
+        );
+      })
     }
   </ul>
 </Section>
@@ -40,7 +35,7 @@ import { certificates } from '@/jsons/cv-AP.json';
     display: grid;
     grid-template-columns: repeat(
       auto-fit,
-      minmax(220px, 1fr)
+      minmax(160px, 1fr)
     );
     gap: 1rem;
     a {

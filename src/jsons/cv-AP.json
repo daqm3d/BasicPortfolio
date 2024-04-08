@@ -246,22 +246,10 @@
   ],
   "certificates": [
     {
-      "name": "Certificate de lo que sea",
+      "name": "NDG LINUX ESSENTIALS",
       "date": "2021-11-07",
-      "issuer": "Company representativa",
-      "url": "https://certificate.com"
-    },
-    {
-      "name": "Certificate de lo que sea",
-      "date": "2021-11-07",
-      "issuer": "Company representativa",
-      "url": "https://certificate.com"
-    },
-    {
-      "name": "Certificate de lo que sea",
-      "date": "2021-11-07",
-      "issuer": "Company representativa",
-      "url": "https://certificate.com"
+      "issuer": "Cisco Networking academy",
+      "url": "https://drive.google.com/file/d/1eMy6dN44ObooGlLm2rLceXidSeZMxA2G/view?pli=1"
     }
   ],
 
@@ -279,7 +267,8 @@
         "Nginx",
         "Docker"
       ],
-      "url": "https://intranet.sunad.gob.ve/"
+      "url": "https://intranet.sunad.gob.ve/",
+      "repo": "ss"
     },
     {
       "name": "Project OVD",
@@ -293,7 +282,8 @@
         "MariaDB",
         "Nginx"
       ],
-      "url": "https://incautaciones.sunad.gob.ve/"
+      "url": "https://incautaciones.sunad.gob.ve/",
+      "repo": null
     },
     {
       "name": "WEB SUNAD",
@@ -306,14 +296,16 @@
         "MySQL",
         "Apache"
       ],
-      "url": "https://www2.sunad.gob.ve/"
+      "url": "https://www2.sunad.gob.ve/",
+      "repo": "ss"
     },
     {
       "name": "WEB VEN911",
       "isActive": true,
       "description": "Pagina web que permite difundir los avances en materia institucional del VEN911",
       "highlights": ["HTML5", "CSS3", "JavaScript"],
-      "url": "https://project.com/"
+      "url": "https://project.com/",
+      "repo": "ss"
     }
   ],
 

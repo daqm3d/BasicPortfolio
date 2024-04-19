@@ -29,3 +29,5 @@ Modifica los estilos y las fuentes a tu conveniencia, una ves termines edita la 
 
 - Convención [JSON](https://jsonresume.org/schema/) de donde se inspiro para la estructura a usar.
 - Video midudev `Como Crear un Portfolio Web Configurable para Programadores\_ Astro 4, HTML, CSS`
+- animacion border proyecto `2024 Modern Buttons using CSS & Vanilla Javascript`
+- animacion 3D img hero `CSS 3D Card Hover Effects (480p_30fps_VP9-64kbit_Opus)`

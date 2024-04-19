@@ -101,7 +101,11 @@ const SOCIAL_ICONS = {
       </footer>
     </div>
     <figure>
-      <img src={image} alt={alias} />
+      <dir>
+        <img src={image} alt={alias} />
+      </dir>
+      <img src="./DAQM3D.jpg" alt={alias} />
+      <h2>DAQM3D</h2>
     </figure>
   </article>
 </Section>
@@ -110,8 +114,8 @@ const SOCIAL_ICONS = {
 
   
   .container {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
     justify-content: space-between;
     gap: 1rem;
     .info {
@@ -163,10 +167,68 @@ const SOCIAL_ICONS = {
       }
     }
   }
-  img {
+  figure{
+    position: relative;
     width: 128px;
-    border-radius: 16px;
+    height: 160px;
+    >img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      opacity: 0;
+      width: 100%;
+      height: 90%;
+      object-fit: cover;
+      border-radius: 50%;
+      
+      transform: translateY(0);
+      transition: .5s;
+    }
+    > h2{
+      position: absolute;
+      bottom: 10px;
+      left: 70%;
+      transform: translateX(-50%);
+      color: #fafafa;
+      font-size: 1rem;
+      background: #5bfa5b;
+      width: 80%;
+      text-align: center;
+      padding: 5px 10px;
+      border-radius: 10px;
+      opacity: 0;
+    }
+    
+    dir{
+      width: 100%;
+      height: 100%;
+      inset:0;
+      background-color: #222;
+      border-radius: 15px;
+    
+      img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%; 
+        height: 100%;
+        object-fit: cover;
+        transition: .5s;
+        border-radius:inherit;
+      }
+    }
   }
+  figure:hover dir img{
+    opacity: 0;
+  }
+  figure:hover > img{
+    opacity: 1;
+    transform: translateY(-25%)
+  }
+  figure:hover > h2{
+      opacity: 1;
+    }
 @media print {
   footer.print{
     display: grid;

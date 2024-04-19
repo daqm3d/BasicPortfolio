@@ -1,6 +1,6 @@
 # build output
 dist/
-README.md
+
 
 # generated types
 .astro/

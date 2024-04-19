@@ -11,7 +11,7 @@ import { education } from "@/jsons/cv-AP.json"
             <time datetime={`$[startDate - endDate ?? "actualmente" ]`} >Año {startDate}-{ endDate? ` ${endDate}` : "Actualmente" }</time>
           </header>
           <footer>
-            <h3>Titulo: {area}</h3>
+            <h3>{area}</h3>
             <h4>{institution}</h4>
           </footer>
         </article>

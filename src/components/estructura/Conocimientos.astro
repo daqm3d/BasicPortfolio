@@ -1,9 +1,6 @@
 ---
 import Section from '@/components/Section.astro';
-import {
-  skills,
-  languages,
-} from '@/jsons/cv-AP.json';
+import { skills, languages } from '@/jsons/cv-AP.json';
 
 const filter = [];
 const uniqueKeywords = new Set(
@@ -17,17 +14,6 @@ uniqueKeywords.forEach((tap) => {
     ),
   });
 });
-console.log(filter);
-console.log(uniqueKeywords);
-/*
-const uniqueKeywords = new Set(skills.map((key) => key.keywords[0]))
-const ver = uniqueKeywords.forEach( (tag) => {
-  const filter = {
-    [tag] : skills.filter( (key) => key.keywords.includes(tag))
-  }
-  return filter;
-})
-console.log(ver);*/
 ---
 
 <Section id="Conocimientos" title="Conocimientos">
@@ -73,7 +59,6 @@ console.log(ver);*/
       padding: 0.2rem 0.6rem;
     }
   }
-
   @media print {
     li {
       border: 2px solid #eee;

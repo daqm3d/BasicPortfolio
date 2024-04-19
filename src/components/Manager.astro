@@ -1,7 +1,5 @@
 ---
 import { basics } from '@/jsons/cv-AP.json';
-import Mail from '@/icons/Mail.astro';
-import Phone from '@/icons/Phone.astro';
 import GitHub from '@/icons/GitHub.astro';
 import LinkedIn from '@/icons/LinkedIn.astro';
 
@@ -13,14 +11,15 @@ const SOCIAL_ICONS = {
 
 const info = profiles.map(({ network, usernam, url }) => {
   const icon = SOCIAL_ICONS[network];
-  const filtroLetra = network[0].toLocaleUpperCase();
+  const filtroLetra = network[0].toUpperCase();
+
   return {
     id: network,
     section: 'Redes Sociales',
     title: `Visitar ${network} de ${usernam}`,
-    hotkey: `ctrl+${filtroLetra}`,
-    icon,
     url,
+    icon,
+    hotkey: `ctrl+${filtroLetra}`,
   };
 });
 ---
@@ -32,6 +31,7 @@ const info = profiles.map(({ network, usernam, url }) => {
 <ninja-keys
   class="notPrint"
   placeholder="type a command or search..."
+  hideBreadcrumbs
   data-info={JSON.stringify(info)}></ninja-keys>
 <script>
   import 'ninja-keys';
@@ -39,7 +39,12 @@ const info = profiles.map(({ network, usernam, url }) => {
   const ninja = document.querySelector('ninja-keys');
   if (ninja != null) {
     const info = ninja.getAttribute('data-info') ?? '[]';
+    console.log('info');
+    console.log(info);
+
     const parseInfo = JSON.parse(info);
+    console.log('parseInfo');
+    console.log(parseInfo);
     const data = parseInfo.map((item) => {
       return {
         ...item,
@@ -109,6 +114,8 @@ const info = profiles.map(({ network, usernam, url }) => {
     }
   }
   footer {
+    z-index: 1;
+
     background: #fdfdfd;
     border-top: 1px solid #eee;
     position: fixed;

@@ -2,6 +2,7 @@
 import Section from '@/components/Section.astro';
 import { projects } from '@/jsons/cv-AP.json';
 import GitHub from '@/icons/GitHub.astro';
+import WorldMap from '@/icons/WorldMap.astro';
 ---
 
 <Section id="Proyectos" title="Proyectos">
@@ -18,11 +19,12 @@ import GitHub from '@/icons/GitHub.astro';
         }) => {
           return (
             <li>
-              <article>
+              <article class="proyectos">
                 <header>
                   <h3>
                     <a
-                      href={url}
+                      class={isActive && 'hover'}
+                      href={isActive && url}
                       title={`Ver el proyecto ${name}`}
                       target="_blank"
                     >
@@ -31,15 +33,28 @@ import GitHub from '@/icons/GitHub.astro';
                     {isActive && <span>&bull;</span>}
                     {repo && (
                       <a
+                        class="notPrint"
                         href={`${url}`}
                         title={`Visita el repo del proyecto ${name}`}
-                        target="_blank"
+                        0target="_blank"
                       >
                         <GitHub />
                       </a>
                     )}
                   </h3>
                   <p>{description}</p>
+                  {isActive && (
+                    <span class="print">
+                      <WorldMap />
+                      {url}
+                    </span>
+                  )}
+                  {repo && (
+                    <span class="print">
+                      <GitHub />
+                      {repo}
+                    </span>
+                  )}
                 </header>
                 <footer>
                   {highlights.map((highlight) => {
@@ -54,6 +69,42 @@ import GitHub from '@/icons/GitHub.astro';
     }
   </ul>
 </Section>
+
+<script>
+  /*let btns= document.querySelectorAll("article");
+  btns.forEach(btn => {
+    btn.onmousemove = function(e){
+      let x= e.pageX -btn.offsetLeft;
+      let y= e.pageY -btn.offsetTop;
+      btn.style.setProperty("--x",x+"px");
+      btn.style.setProperty("--y",y+"px");
+
+    }
+  })
+*/
+  function startDrag(event) {
+    const card = event.target.closest("article")
+
+    
+    let starX = (event.pageX ?? event.touches[0].pageX) - card.offsetLeft;
+    let starY = (event.pageY ?? event.touches[0].pageY ) - card.offsetTop;
+    card.style.setProperty("--x",starX+"px");
+    card.style.setProperty("--y",starY+"px");
+    console.log(card)
+    //! como hacaer ::before al article
+    card.style.opacity=1;
+    
+  }
+  let ver= document.querySelectorAll("article");
+  ver.forEach(ve =>{
+    if (ve.className=="proyectos") {
+      ve.addEventListener("mousemove", startDrag)
+      ve.addEventListener("touchmove", startDrag, {passive:true})
+    }
+  })
+  
+</script>
+
 <style>
   ul {
     display: grid;
@@ -63,23 +114,56 @@ import GitHub from '@/icons/GitHub.astro';
     );
     gap: 1rem;
   }
+
   article {
     display: flex;
     flex-direction: column;
-    border: 4px solid #eee;
+    border: 2px solid #eee;
     border-radius: 1rem;
     height: 100%;
     padding: 16px;
-    gap: 16px;
+    gap: 1rem;
+
+    /* ver code */
+    position: relative;
+    overflow: hidden;
+    transition: .5s;
+    &::before{
+    content: "";
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    transform: translate(-50%,-50%);
+    background: radial-gradient(#5bfa5b,transparent, transparent),
+    radial-gradient(#18193f,transparent,transparent);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: .5s,top 0s, left 0s
+    }
+    &:hover::before{
+      opacity: 1;
+    }
+    
+    &::after{
+      content: "";
+      position: absolute;
+      inset:3px;
+      background: #fafafa;
+      border-radius: 1rem;      
+    }
+    /* --- */
     header {
+      z-index: 1;
       flex: 1;
-      margin-bottom: 1rem;
       h3 {
         display: flex;
         margin-bottom: 0.5rem;
         gap: 0.5rem;
         a {
           color: #111;
+          letter-spacing: 0.1rem;
+          transition: .5s;
         }
         span {
           color: #5bfa5b;
@@ -103,11 +187,12 @@ import GitHub from '@/icons/GitHub.astro';
           }
         }
       }
-      a:hover {
+      a.hover:hover {
         text-decoration: underline;
       }
     }
     footer {
+      z-index: 1;
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
@@ -120,9 +205,15 @@ import GitHub from '@/icons/GitHub.astro';
     }
   }
   @media print {
-    span {
+    footer span {
       border: 2px solid #eee;
       padding: 0.1rem 0.3rem;
+    }
+    header span.print {
+      display: flex;
+      align-items: center;
+      margin-top: 0.5rem;
+      gap: 0.5rem;
     }
   }
 </style>

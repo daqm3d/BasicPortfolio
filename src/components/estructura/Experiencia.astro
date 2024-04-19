@@ -1,66 +1,80 @@
 ---
-import Section from "@/components/Section.astro"
-import { work } from "@/jsons/cv-AP.json"
+import Section from '@/components/Section.astro';
+import { work } from '@/jsons/cv-AP.json';
 ---
+
 <Section id="Experiencia" title="Experiencia Profesional">
   {
-    work.map( ({name, startDate, endDate, address, position, summary, highlights}) => {        
-      return(
-        <article>
-          <header>
-            <time datetime={startDate}>De {startDate}</time>
-            <time datetime={endDate ?? "actualmente" }> { endDate? `Al ${endDate}` : "Actualmente" }</time>
-            <p>{address}</p>
-          </header>
-          <footer>
-            <h3>{name}</h3>
-            <h4>Cargo: {position}</h4>
-            <ul>
-                {
-                  summary.map((dato)=>{
-                    return (<li>- {dato}</li>)
-                 })
-                }
-            </ul>
-          </footer>
-        </article>
-      )
-    })
+    work.map(
+      ({
+        name,
+        startDate,
+        endDate,
+        address,
+        position,
+        summary,
+      }) => {
+        return (
+          <article>
+            <header>
+              <time datetime={startDate}>
+                De {startDate}
+              </time>
+              <time datetime={endDate ?? 'actualmente'}>
+                {' '}
+                {endDate ? `Al ${endDate}` : 'Actualmente'}
+              </time>
+              <p>{address}</p>
+            </header>
+            <footer>
+              <h3>{name}</h3>
+              <h4>Cargo: {position}</h4>
+              <ul>
+                {summary.map((dato) => {
+                  return <li>- {dato}</li>;
+                })}
+              </ul>
+            </footer>
+          </article>
+        );
+      }
+    )
   }
 </Section>
 <style>
-  article{
+  article {
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-gap: 1rem;
-    header{
+    header {
       display: flex;
       flex-direction: column;
     }
-    h3{
-        font-size: 1rem;
+    h3 {
+      font-size: 1rem;
     }
-    h4,header{
-        font-size: .8rem;
-        opacity: 40%;
-        font-weight: 500;
+    h4,
+    header {
+      font-size: 0.8rem;
+      opacity: 40%;
+      font-weight: 500;
     }
-    li{
+    li {
       color: #444;
       letter-spacing: -0.05rem;
     }
   }
- @media (width < 620px) {
-  article{
-    grid-template-columns: 1fr;
-    header:nth-child(1){
-      grid-row: 2;
-    }
-    
-    header{
-      flex-direction: row;
-      gap: 1rem;
+  @media (width < 620px) {
+    article {
+      grid-template-columns: 1fr;
+      header:nth-child(1) {
+        grid-row: 2;
+      }
+
+      header {
+        flex-direction: row;
+        gap: 1rem;
+      }
     }
   }
- }
 </style>

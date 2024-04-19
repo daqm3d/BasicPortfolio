@@ -19,12 +19,12 @@
       {
         "network": "LinkedIn",
         "usernam": "DAQM3D",
-        "url": "https://"
+        "url": "https://www.linkedin.com/in/deivy-quintero-0534b9186"
       },
       {
         "network": "GitHub",
         "usernam": "DAQM3D",
-        "url": "https://"
+        "url": "https://www.github.com/daqm3d"
       }
     ]
   },
@@ -41,11 +41,6 @@
         "Integrar y coordinar los proyectos y grupos de desarrollo, en materia de sistemas de información para la atención y resolución de problemas o requerimientos.",
         "Realizar las actividades de programación de los sistemas de información requeridos en el diseño de estructuras web, implementación del flujo dinámico y acciones interactivas.",
         "Realizar las actividades de recopilación y documentación de la data de los sistemas de información, requerimientos y funciones."
-      ],
-      "highlights": [
-        "Integrar y coordinar los proyectos y grupos de desarrollo, en materia de sistemas de información para la atención y resolución de problemas o requerimientos.",
-        "Realizar las actividades de programación de los sistemas de información requeridos en el diseño de estructuras web, implementación del flujo dinámico y acciones interactivas.",
-        "Realizar las actividades de recopilación y documentación de la data de los sistemas de información, requerimientos y funciones."
       ]
     },
     {
@@ -59,11 +54,6 @@
         "Programador Full Stack Developer.",
         "Desarrollar e implementar aplicativos para solucionar y mejorar el desarrollo interno.",
         "Mantener y actualizar los aplicativos internos de la institución."
-      ],
-      "highlights": [
-        "Programador Full Stack Developer.",
-        "Desarrollar e implementar aplicativos para solucionar y mejorar el desarrollo interno.",
-        "Mantener y actualizar los aplicativos internos de la institución."
       ]
     },
     {
@@ -74,11 +64,6 @@
       "endDate": "12/08/2019",
       "address": "Caracas - Bellas Artes",
       "summary": [
-        "Inducción y adiestramiento del personal asignado para Técnico de cámaras.",
-        "Inducción y adiestramiento del personal asignado para Soporte Técnico.",
-        "Revisión y mantenimiento de los diversos sistemas del área de tecnología."
-      ],
-      "highlights": [
         "Inducción y adiestramiento del personal asignado para Técnico de cámaras.",
         "Inducción y adiestramiento del personal asignado para Soporte Técnico.",
         "Revisión y mantenimiento de los diversos sistemas del área de tecnología."
@@ -96,12 +81,6 @@
         "Instalación de software propios o programas de los periféricos.",
         "Instalación y mantenimiento de los sistemas de SIGECOF y SIGEFIRRHH.",
         "Revisión de los diversos servidores del área tecnología."
-      ],
-      "highlights": [
-        "Revisión y mantenimiento del equipo tecnológico.",
-        "Instalación de software propio o programas de los periféricos.",
-        "Instalación y mantenimiento de los sistemas de SIGECOF y SIGEFIRRHH.",
-        "Revisión de los diversos servidores del área tecnología."
       ]
     },
     {
@@ -112,11 +91,6 @@
       "endDate": "30/06/2018",
       "address": "Caracas - La California",
       "summary": [
-        "Instalación y remoción del sistema de cámaras.",
-        "Revisión y mantenimiento de las cámaras.",
-        "Mantenimiento del área eléctrica y la red de cableado del sistema de cámaras."
-      ],
-      "highlights": [
         "Instalación y remoción del sistema de cámaras.",
         "Revisión y mantenimiento de las cámaras.",
         "Mantenimiento del área eléctrica y la red de cableado del sistema de cámaras."
@@ -131,11 +105,7 @@
       "address": "Caracas - La California",
       "summary": [
         "Investigar y resolver problemas técnicos o desarrollar tecnologías y nuevos productos, como complementos de los estudios de sus respectivas carreras.",
-        ""
-      ],
-      "highlights": [
-        "Investigar y resolver problemas técnicos para desarrollar tecnologías y nuevos productos, como complementos de los estudios de la respectiva carrera.",
-        ""
+        "Diseño de un sitio web adaptativo para la difusión y concienciación de información del Centro de Comando, Control y Telecomunicaciones VEN9-1-1."
       ]
     }
   ],
@@ -190,7 +160,7 @@
       ]
     },
     {
-      "name": "MySQL",
+      "name": "MariaDB",
       "level": "",
       "keywords": ["Herramientas y Tecnologías", "BD"]
     },
@@ -255,9 +225,9 @@
 
   "projects": [
     {
-      "name": "Intranet",
+      "name": "Intranet SUNAD",
       "isActive": true,
-      "description": "Aplicativo de gestión interna para manejar diversas funcionalidades del area de RRHH",
+      "description": "Diseño de un Aplicativo web que permita la automatización de diversas funciones del area de RRHH como son los ARC, Recibos de pago, Constancia de trabajo y otros",
       "highlights": [
         "HTML5",
         "CSS3",
@@ -268,12 +238,12 @@
         "Docker"
       ],
       "url": "https://intranet.sunad.gob.ve/",
-      "repo": "ss"
+      "repo": null
     },
     {
-      "name": "Project OVD",
+      "name": "Proyecto OVD-SUNAD",
       "isActive": true,
-      "description": "Aplicativo para gestión del manejo de sustancias ilegales incautadas por los diversos organismos del estado, que se reportan a la SUNAD",
+      "description": "Creación de un aplicativo web el cual permita gestionar y manejar las sustancias ilegales incautadas por los diversos organismos del estado que se reportan a la SUNAD",
       "highlights": [
         "HTML5",
         "CSS3",
@@ -288,24 +258,24 @@
     {
       "name": "WEB SUNAD",
       "isActive": true,
-      "description": "Pagina web que permite difundir los avances en materia institucional de la SUNAD",
+      "description": "Implementación de un sitio web que permita la defunción de los avances en materia institucional y social de la Superintendencia Nacional Antidrogas - SUNAD",
       "highlights": [
         "HTML5",
         "CSS3",
         "WordPress",
-        "MySQL",
+        "MariaDB",
         "Apache"
       ],
       "url": "https://www2.sunad.gob.ve/",
-      "repo": "ss"
+      "repo": null
     },
     {
       "name": "WEB VEN911",
       "isActive": true,
-      "description": "Pagina web que permite difundir los avances en materia institucional del VEN911",
+      "description": "Diseño de un sitio web adaptativo para la difusión y concienciación de información del Centro de Comando, Control y Telecomunicaciones VEN9-1-1.",
       "highlights": ["HTML5", "CSS3", "JavaScript"],
       "url": "https://project.com/",
-      "repo": "ss"
+      "repo": "https://www.github/daqm3d/web-ven911"
     }
   ],
 

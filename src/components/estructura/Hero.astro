@@ -101,8 +101,8 @@ const SOCIAL_ICONS = {
       </footer>
     </div>
     <figure>
-      <dir>
-        <img src={image} alt={alias} />
+      <dir class="notPrint">
+        <img  src={image} alt={alias} />
       </dir>
       <img src="./DAQM3D.jpg" alt={alias} />
       <h2>DAQM3D</h2>
@@ -174,20 +174,19 @@ const SOCIAL_ICONS = {
     >img{
       position: absolute;
       top: 0;
-      left: 0;
-      z-index: 10;
+      left: 10%;
       opacity: 0;
-      width: 100%;
-      height: 90%;
+      width: 80%;
+      height: 80%;
       object-fit: cover;
-      border-radius: 50%;
-      
-      transform: translateY(0);
+      border-radius: 10%;
+
+      /*transform: translateY(0);*/
       transition: .5s;
     }
     > h2{
       position: absolute;
-      bottom: 10px;
+      bottom: 20px;
       left: 70%;
       transform: translateX(-50%);
       color: #fafafa;
@@ -198,42 +197,59 @@ const SOCIAL_ICONS = {
       padding: 5px 10px;
       border-radius: 10px;
       opacity: 0;
+      text-shadow: #18193f 1px 1px 10px;
+      transition: .5s;
     }
-    
     dir{
       width: 100%;
       height: 100%;
-      inset:0;
-      background-color: #222;
+     /* inset:0;
+      background-color: #18193f;*/
+      
+      background: linear-gradient(#5bfa5b,#18193f);
       border-radius: 15px;
-    
+      transition: .5s;
+
       img{
-        position: absolute;
+        /*position: absolute;
         top: 0;
-        left: 0;
+        left: 0; */
         width: 100%; 
-        height: 100%;
         object-fit: cover;
         transition: .5s;
         border-radius:inherit;
       }
     }
   }
+  figure:hover dir{
+    transform: perspective(900px) translateX(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  }
   figure:hover dir img{
     opacity: 0;
   }
   figure:hover > img{
     opacity: 1;
-    transform: translateY(-25%)
+    display: inherit;
+    transform: translate3d(0%, -25%, 100px);
   }
   figure:hover > h2{
       opacity: 1;
+      transform: translate3d(-40%, 0%, 100px);
+
+  /*    bottom: 20px; */
     }
+
 @media print {
   footer.print{
     display: grid;
     grid-template-columns: repeat( auto-fit,minmax(200px,1fr));
     gap: .5rem 1rem;
+  }
+  figure> img{
+    opacity: 1;
+    width: 100%;
+    height: 100%;
   }
 }
 </style>

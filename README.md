@@ -1,4 +1,4 @@
-# CurriFolio Minimalista
+# CurriFolio Minimalista<picture><source media="(prefers-color-scheme: dark)" srcset="./src/icons/Code.astro"><source media="(prefers-color-scheme: light)" srcset="./src/icons/Code.astro"><img align="right" valign="center" height="79" width="63" src="./src/icons/Code.astro" alt="CurriFolio logo" /></picture>
 
 Aplicación que permite tener un **Currículo - Portafolio** minimalista, el cual cuenta con la siguiente estructura: Experiencia Profesional, Conocimientos,Cursos, Estudios, Referencias. ademas **este cuenta con las siguientes caracteristicas:**
 
@@ -24,6 +24,7 @@ Modifica los estilos y las fuentes a tu conveniencia, una ves termines edita la 
 
 - Creación de aplicaciones en Astro
 - Uso de librería ninja-Keys
+- Uso de propiedad css display unset
 
 ## Referencia
 

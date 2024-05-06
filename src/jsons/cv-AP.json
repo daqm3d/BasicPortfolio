@@ -2,7 +2,7 @@
   "basics": {
     "name": "Deivy Armando Quintero Martinez",
     "alias": "DAQM3D",
-    "label": "Full Stack Developer enfocado en las 3D, Dedicación-recopilación, Desarrollo y Despliegue de Aplicaciones Web",
+    "label": "Full Stack Developer enfocado en los tres vertientes, Diseño, Desarrollo y Despliegue de Aplicaciones Web",
     "image": "./DAQM3D.png",
     "email": "daqm3d@gmail.com",
     "phone": "+58 4129880279",
@@ -19,7 +19,7 @@
       {
         "network": "LinkedIn",
         "usernam": "DAQM3D",
-        "url": "https://www.linkedin.com/in/deivy-quintero-0534b9186"
+        "url": "https://www.linkedin.com/in/daqm3d"
       },
       {
         "network": "GitHub",
@@ -35,7 +35,7 @@
       "position": "Coordinador de Base de Datos y Páginas Web.",
       "url": "",
       "startDate": "12/02/2020",
-      "endDate": null,
+      "endDate": "10/11/2023",
       "address": "Caracas - Chacaito",
       "summary": [
         "Integrar y coordinar los proyectos y grupos de desarrollo, en materia de sistemas de información para la atención y resolución de problemas o requerimientos.",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "name": "Oficina Nacional Antidroga.",
+      "name": "Superintendencia Nacional Antidroga.",
       "position": "Desarrollador web.",
       "url": "",
       "startDate": "12/08/2019",

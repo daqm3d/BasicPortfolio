@@ -18,6 +18,7 @@ const {
   location,
   profiles,
 } = basics;
+/* const splitAlias = alias.split(''); */
 const { city, address, region } = location;
 
 const SOCIAL_ICONS = {
@@ -26,10 +27,25 @@ const SOCIAL_ICONS = {
 };
 ---
 
-<Section id="Hero" >
+<Section id="Hero">
   <article class="container">
     <div class="info">
-      <h1>{name} <Code/> {alias}</h1>
+      <h1>
+        {name}
+        <Code />
+        {
+          alias.split('').map((value, key) => {
+            return (
+              <div
+                class="letras"
+                style={`--time:${key + 1}`}
+              >
+                {value}
+              </div>
+            );
+          })
+        }
+      </h1>
       <h2>{label}</h2>
       <span>
         <WorldMap />
@@ -60,49 +76,54 @@ const SOCIAL_ICONS = {
           )
         }
         {
-          profiles.map(
-            ({ network, usernam, url }) => {
-              const Icon = SOCIAL_ICONS[network];
-              return (
-                <a
-                  href={url}
-                  title={`Visita el perfil de ${usernam} en ${network}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon />
-                </a>
-              );
-            }
-          )
+          profiles.map(({ network, usernam, url }) => {
+            const Icon = SOCIAL_ICONS[network];
+            return (
+              <a
+                href={url}
+                title={`Visita el perfil de ${usernam} en ${network}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon />
+              </a>
+            );
+          })
         }
       </footer>
       <footer class="print">
         {
           email && (
-            <span><Mail />{email}</span>
+            <span>
+              <Mail />
+              {email}
+            </span>
           )
         }
         {
           phone && (
-            <span><Phone />{phone}</span>
+            <span>
+              <Phone />
+              {phone}
+            </span>
           )
         }
         {
-          profiles.map(
-            ({ network, url }) => {
-              const Icon = SOCIAL_ICONS[network];
-              return (
-                <span><Icon />{url}</span>
-              );
-            }
-          )
+          profiles.map(({ network, url }) => {
+            const Icon = SOCIAL_ICONS[network];
+            return (
+              <span>
+                <Icon />
+                {url}
+              </span>
+            );
+          })
         }
       </footer>
     </div>
     <figure>
       <dir class="notPrint">
-        <img  src={image} alt={alias} />
+        <img src={image} alt={alias} />
       </dir>
       <img src="./DAQM3D.jpg" alt={alias} />
       <h2>DAQM3D</h2>
@@ -111,8 +132,6 @@ const SOCIAL_ICONS = {
 </Section>
 
 <style>
-
-  
   .container {
     display: grid;
     grid-template-columns: 4fr 1fr;
@@ -124,14 +143,14 @@ const SOCIAL_ICONS = {
       gap: 0.5rem;
       h1 {
         font-size: 1.8rem;
-        svg{
-          margin: auto 5px;  
+        svg {
+          margin: auto 5px;
+        }
+        div {
+          display: unset;
+          word-spacing: -0.4rem;
         }
       }
-      :is(h1:hover) svg{
-        animation: 1.5s infinite alternate DAQM3D
-      }
-      
       h2 {
         color: #444;
         font-weight: 500;
@@ -144,9 +163,19 @@ const SOCIAL_ICONS = {
         gap: 0.25rem;
         font-size: 0.85rem;
         letter-spacing: -0.05rem;
+      }
+    }
+
+    :is(.info:hover) h1 svg {
+      animation: 1s infinite alternate DAQM3D;
+    }
+    :is(.info:hover) h1 div.letras {
+      animation: 1s linear forwards contarLetras;
+    }
+    :is(.info:hover) h1 div.letras {
+      animation-delay: calc(var(--time) * 1s);
     }
   }
-  
 
   footer {
     display: flex;
@@ -157,21 +186,23 @@ const SOCIAL_ICONS = {
       display: inline-flex;
       border: 1.5px solid #cfcfcfcb;
       border-radius: 5px;
-      transition: background .3s ease-in-out, border .5s ease-in-out;
+      transition:
+        background 0.3s ease-in-out,
+        border 0.5s ease-in-out;
     }
     a:hover {
       background: #5bfa5b;
       border: 1.5px solid #18193f;
-      svg{
-        animation: 1s linear  social;
+      svg {
+        animation: 1s linear social;
       }
     }
   }
-  figure{
+  figure {
     position: relative;
     width: 128px;
     height: 160px;
-    >img{
+    > img {
       position: absolute;
       top: 0;
       left: 10%;
@@ -182,9 +213,9 @@ const SOCIAL_ICONS = {
       border-radius: 10%;
 
       /*transform: translateY(0);*/
-      transition: .5s;
+      transition: 0.5s;
     }
-    > h2{
+    > h2 {
       position: absolute;
       bottom: 20px;
       left: 70%;
@@ -198,58 +229,62 @@ const SOCIAL_ICONS = {
       border-radius: 10px;
       opacity: 0;
       text-shadow: #18193f 1px 1px 10px;
-      transition: .5s;
+      transition: 0.5s;
     }
-    dir{
+    dir {
       width: 100%;
       height: 100%;
-     /* inset:0;
+      /* inset:0;
       background-color: #18193f;*/
-      
-      background: linear-gradient(#5bfa5b,#18193f);
-      border-radius: 15px;
-      transition: .5s;
 
-      img{
+      background: linear-gradient(#5bfa5b, #18193f);
+      border-radius: 15px;
+      transition: 0.5s;
+
+      img {
         /*position: absolute;
         top: 0;
         left: 0; */
-        width: 100%; 
+        width: 100%;
         object-fit: cover;
-        transition: .5s;
-        border-radius:inherit;
+        transition: 0.5s;
+        border-radius: inherit;
       }
     }
   }
-  figure:hover dir{
-    transform: perspective(900px) translateX(-5%) rotateX(25deg) translateZ(0);
+  figure:hover dir {
+    transform: perspective(900px) translateX(-5%)
+      rotateX(25deg) translateZ(0);
     box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
   }
-  figure:hover dir img{
+  figure:hover dir img {
     opacity: 0;
   }
-  figure:hover > img{
+  figure:hover > img {
     opacity: 1;
     display: inherit;
     transform: translate3d(0%, -25%, 100px);
   }
-  figure:hover > h2{
-      opacity: 1;
-      transform: translate3d(-40%, 0%, 100px);
-
-  /*    bottom: 20px; */
-    }
-
-@media print {
-  footer.print{
-    display: grid;
-    grid-template-columns: repeat( auto-fit,minmax(200px,1fr));
-    gap: .5rem 1rem;
-  }
-  figure> img{
+  figure:hover > h2 {
     opacity: 1;
-    width: 100%;
-    height: 100%;
+    transform: translate3d(-40%, 0%, 100px);
+
+    /*    bottom: 20px; */
   }
-}
+
+  @media print {
+    .info footer.print {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(200px, 1fr)
+      );
+      gap: 0.5rem 1rem;
+    }
+    figure > img {
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+    }
+  }
 </style>

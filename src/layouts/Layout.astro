@@ -1,5 +1,7 @@
 ---
 const { title } = Astro.props;
+// Supports weights 400-900
+import '@fontsource-variable/playfair-display';
 ---
 
 <!doctype html>
@@ -19,10 +21,21 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="scene">
+    <div class="sun"></div>
     <slot />
+    <div class="bg"></div>
   </body>
 </html>
+
+<!-- <script>
+  let sun = document.querySelector('.sun');
+  let body = document.querySelector('body');
+  sun.onclick = function () {
+    body.classList.toggle('dark');
+  };
+</script> -->
+
 <style is:global>
   :root {
   }
@@ -55,6 +68,14 @@ const { title } = Astro.props;
       -webkit-background-clip: text;
     }
   }
+  @keyframes animateBg {
+    0% {
+      background-position-x: 0px;
+    }
+    100% {
+      background-position-x: 1344px;
+    }
+  }
 
   html {
     scrollbar-color: #5bfa5b #18193f;
@@ -80,7 +101,7 @@ const { title } = Astro.props;
   h2,
   h3,
   h4 {
-    font-family: serif;
+    font-family: 'Playfair Display Variable', serif;
     text-wrap: balance;
   }
   time,
@@ -90,12 +111,100 @@ const { title } = Astro.props;
     line-height: 1.5;
     text-wrap: pretty;
   }
+
+  /* Animación Dia Noche */
+  .scene {
+    position: relative;
+    overflow-x: hidden;
+    height: 100%;
+    background: #a6d8ff;
+
+    .sun {
+      z-index: 1;
+      position: fixed;
+      top: 10%;
+      left: 10%;
+      width: 100px;
+      height: 100px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 50px #fff;
+      cursor: pointer;
+      transition: left 1s;
+    }
+    .bg {
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
+      height: 445px;
+      background: url(city.png);
+      background-size: 1344px;
+      background-repeat: repeat-x;
+      animation: animateBg 30s linear infinite;
+    }
+  }
+  .dark {
+    background: #222833;
+    height: 100%;
+    .sun {
+      left: 85%;
+      box-shadow: 0 0 0 #fff;
+    }
+    .sun::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      width: 100px;
+      height: 100px;
+      background: #222833;
+      border-radius: 50%;
+    }
+  }
+
   /*@media (prefers-color-scheme: dark){
 		html{
+
 			background: #000;
 			color: #fff;
 		}
 	}*/
+  @media (width <= 1100px) {
+    .scene {
+      .sun {
+        left: 1vw;
+      }
+    }
+    .dark {
+      .sun {
+        left: 90vw;
+      }
+    }
+  }
+  @media (width <= 890px) {
+    .scene {
+      .sun {
+        left: -5vw;
+      }
+    }
+    .dark {
+      .sun {
+        left: 95vw;
+      }
+    }
+  }
+  @media (width <= 890px) {
+    .scene {
+      .sun {
+        left: -8vw;
+      }
+    }
+    .dark {
+      .sun {
+        left: 90vw;
+      }
+    }
+  }
   @media print {
     .notPrint {
       display: none;

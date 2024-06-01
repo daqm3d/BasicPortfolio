@@ -18,7 +18,7 @@ const info = profiles.map(({ network, usernam, url }) => {
     section: 'Redes Sociales',
     title: `Visitar ${network} de ${usernam}`,
     url,
-    icon,
+    /* icon: `/app/src/icons/${network}.astro`, */
     hotkey: `ctrl+${filtroLetra}`,
   };
 });
@@ -35,13 +35,11 @@ const info = profiles.map(({ network, usernam, url }) => {
   data-info={JSON.stringify(info)}></ninja-keys>
 <script>
   import 'ninja-keys';
+  let body = document.querySelector('body');
 
   const ninja = document.querySelector('ninja-keys');
   if (ninja != null) {
     const info = ninja.getAttribute('data-info') ?? '[]';
-    console.log('info');
-    console.log(info);
-
     const parseInfo = JSON.parse(info);
     console.log('parseInfo');
     console.log(parseInfo);
@@ -55,6 +53,41 @@ const info = profiles.map(({ network, usernam, url }) => {
     });
 
     ninja.data = [
+      /* para crear un sub menu  */
+      {
+        id: 'Tema',
+        title: 'Seleccionar Tema Web',
+        icon: '',
+        section: 'Acciones',
+        children: [
+          'Dark Theme',
+          'Light Theme',
+          'System Theme',
+        ],
+        handler: () => {
+          ninja.open({ parent: 'Tema' });
+          return { keepOpen: true };
+        },
+      },
+      {
+        id: 'Dark Theme',
+        title: 'Tema Dark',
+        icon: '',
+        parent: 'Tema',
+        handler: () => {
+          body.classList.add('dark');
+        },
+      },
+      {
+        id: 'Light Theme',
+        title: 'Tema light',
+        icon: '',
+        parent: 'Tema',
+        handler: () => {
+          body.classList.remove('dark');
+        },
+      },
+      /* *** */
       {
         id: 'print',
         title: 'Imprimir',
@@ -65,40 +98,6 @@ const info = profiles.map(({ network, usernam, url }) => {
           window.print();
         },
       },
-
-      /* para crear un sub menu  
-      {
-        id: 'Tema',
-        title: 'Cambiar Tema Web',
-        icon: '',
-        children: [
-          'Light Theme',
-          'Dark Theme',
-          'System Theme',
-        ],
-        handler: () => {
-          ninja.open({ parent: 'Tema' });
-          return { keepOpen: true };
-        },
-      },
-      {
-        id: 'Light Theme',
-        title: 'Cambiar  tema a light',
-        icon: '',
-        parent: 'Tema',
-        handler: () => {
-          document.documentElement.classList.remove('dark');
-        },
-      },
-      {
-        id: 'Dark Theme',
-        title: 'Cambiar tema a Dark',
-        icon: '',
-        parent: 'Tema',
-        handler: () => {
-          document.documentElement.classList.add('dark');
-        },
-      },*/
       ...data,
     ];
   }
@@ -128,9 +127,9 @@ const info = profiles.map(({ network, usernam, url }) => {
     view-timeline-name: --revealing;
     view-timeline-axis: block;
 
-    animation: linear 0.3s fadeIn;
+    animation: linear 0.5s fadeIn;
     animation-timeline: --revealing;
-    animation-range: entry 100% cover 10%;
+    animation-range: entry 100% cover 20%;
   }
   kbd {
     background-color: #eee;

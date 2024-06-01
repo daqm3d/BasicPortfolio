@@ -28,13 +28,13 @@ import '@fontsource-variable/playfair-display';
   </body>
 </html>
 
-<!-- <script>
+<script>
   let sun = document.querySelector('.sun');
   let body = document.querySelector('body');
   sun.onclick = function () {
     body.classList.toggle('dark');
   };
-</script> -->
+</script>
 
 <style is:global>
   :root {
@@ -81,7 +81,6 @@ import '@fontsource-variable/playfair-display';
     scrollbar-color: #5bfa5b #18193f;
     font-family: 'Courier New';
     letter-spacing: -0.025rem;
-    background: #fafafa;
   }
   a {
     text-decoration: none;
@@ -114,11 +113,10 @@ import '@fontsource-variable/playfair-display';
 
   /* Animación Dia Noche */
   .scene {
-    position: relative;
-    overflow-x: hidden;
     height: 100%;
     background: #a6d8ff;
-
+    display: flex;
+    justify-content: center;
     .sun {
       z-index: 1;
       position: fixed;
@@ -143,6 +141,7 @@ import '@fontsource-variable/playfair-display';
       animation: animateBg 30s linear infinite;
     }
   }
+
   .dark {
     background: #222833;
     height: 100%;
@@ -161,14 +160,6 @@ import '@fontsource-variable/playfair-display';
       border-radius: 50%;
     }
   }
-
-  /*@media (prefers-color-scheme: dark){
-		html{
-
-			background: #000;
-			color: #fff;
-		}
-	}*/
   @media (width <= 1100px) {
     .scene {
       .sun {
@@ -205,6 +196,7 @@ import '@fontsource-variable/playfair-display';
       }
     }
   }
+
   @media print {
     .notPrint {
       display: none;

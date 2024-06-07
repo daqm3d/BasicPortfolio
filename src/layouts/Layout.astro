@@ -1,5 +1,5 @@
 ---
-const { title } = Astro.props;
+const { title, description, alias } = Astro.props;
 // Supports weights 400-900
 import '@fontsource-variable/playfair-display';
 ---
@@ -8,17 +8,34 @@ import '@fontsource-variable/playfair-display';
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Portfolio Developer Full Stack"
-    />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#a6d8ff" />
     <link
       rel="icon"
       type="image/svg+xml"
       href="/favicon.svg"
     />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- OPEN GRAPH -->
+    <meta property="op:title" content={title} />
+    <meta property="op:description" content={description} />
+    <meta
+      property="op:image"
+      content=`Portfolio${alias}.png`
+    />
+    <meta
+      property="op:image:alt"
+      content=`Fotografía del Portfolio de ${alias}`
+    />
+
+    <!-- SEO 
+    <link rel="alternate" href="url alternativa de idioma" hreflang="en-GB">
+    <link rel="canonical" href="pagina original">
+    -->
+
     <title>{title}</title>
   </head>
   <body class="scene">

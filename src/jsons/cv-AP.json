@@ -5,7 +5,7 @@
     "label": "Full Stack Developer enfocado en los tres vertientes, Diseño, Desarrollo y Despliegue de Aplicaciones Web",
     "image": "./DAQM3D.png",
     "email": "daqm3d@gmail.com",
-    "phone": "+58 4129880279",
+    "phone": "+584129880279",
     "url": "https://daqm3d.dev",
     "summary": "+3 años de experiencia como Desarrollador Web. ",
     "location": {
@@ -77,10 +77,10 @@
       "endDate": "01/02/2019",
       "address": "Caracas - Bellas Artes",
       "summary": [
-        "Revisión y mantenimiento de los equipo tecnológico.",
+        "Verificación y mantenimiento de los equipos tecnológico.",
         "Instalación de software propios o programas de los periféricos.",
         "Instalación y mantenimiento de los sistemas de SIGECOF y SIGEFIRRHH.",
-        "Revisión de los diversos servidores del área tecnología."
+        "Comprobación de los diversos servidores del área tecnología."
       ]
     },
     {
@@ -92,7 +92,7 @@
       "address": "Caracas - La California",
       "summary": [
         "Instalación y remoción del sistema de cámaras.",
-        "Revisión y mantenimiento de las cámaras.",
+        "Revision y mantenimiento de las cámaras.",
         "Mantenimiento del área eléctrica y la red de cableado del sistema de cámaras."
       ]
     },
@@ -273,7 +273,13 @@
       "name": "WEB VEN911",
       "isActive": true,
       "description": "Diseño de un sitio web adaptativo para la difusión y concienciación de información del Centro de Comando, Control y Telecomunicaciones VEN9-1-1.",
-      "highlights": ["HTML5", "CSS3", "JavaScript"],
+      "highlights": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Apache",
+        "GIT"
+      ],
       "url": "https://project.com/",
       "repo": "https://www.github/daqm3d/web-ven911"
     }

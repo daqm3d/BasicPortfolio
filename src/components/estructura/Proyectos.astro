@@ -6,6 +6,9 @@ import WorldMap from '@/icons/WorldMap.astro';
 ---
 
 <Section id="Proyectos" title="Proyectos">
+  <div hidden popover id="my-popover">
+    Greetings, one and all!
+  </div>
   <ul>
     {
       projects.map(
@@ -31,6 +34,13 @@ import WorldMap from '@/icons/WorldMap.astro';
                       {name}
                     </a>
                     {isActive && <span>&bull;</span>}
+                    <button
+                      hidden
+                      popovertarget="my-popover"
+                    >
+                      <WorldMap width="20" height="20" />
+                    </button>
+
                     {repo && (
                       <a
                         class="notPrint"
@@ -71,17 +81,6 @@ import WorldMap from '@/icons/WorldMap.astro';
 </Section>
 
 <script>
-  /*let btns= document.querySelectorAll("article");
-  btns.forEach(btn => {
-    btn.onmousemove = function(e){
-      let x= e.pageX -btn.offsetLeft;
-      let y= e.pageY -btn.offsetTop;
-      btn.style.setProperty("--x",x+"px");
-      btn.style.setProperty("--y",y+"px");
-
-    }
-  })
-*/
   function startDrag(event) {
     const card = event.target.closest('article');
 
@@ -121,7 +120,7 @@ import WorldMap from '@/icons/WorldMap.astro';
   article {
     display: flex;
     flex-direction: column;
-    border: 2px solid #eee;
+    border: 2px solid var(--border);
     border-radius: 1rem;
     height: 100%;
     padding: 16px;
@@ -160,7 +159,8 @@ import WorldMap from '@/icons/WorldMap.astro';
       content: '';
       position: absolute;
       inset: 3px;
-      background: #fafafa;
+      background: var(--main-color);
+
       border-radius: 1rem;
     }
     /* --- */
@@ -174,7 +174,6 @@ import WorldMap from '@/icons/WorldMap.astro';
         display: flex;
         gap: 0.5rem;
         a {
-          color: #111;
           letter-spacing: 0.1rem;
           transition: 0.5s;
           border-bottom: 2px solid transparent;
@@ -185,7 +184,7 @@ import WorldMap from '@/icons/WorldMap.astro';
         a:has(svg) {
           padding: 1px;
           display: inline-flex;
-          border: 1.5px solid #cfcfcfcb;
+          border: 1.5px solid var(--border);
           border-radius: 0.5rem;
           transition:
             background 0.3s ease-in-out,
@@ -194,15 +193,15 @@ import WorldMap from '@/icons/WorldMap.astro';
           margin-inline-start: auto;
         }
         a:has(svg):hover {
-          background: #5bfa5b;
-          border: 1.5px solid #18193f;
+          background: var(--background);
+          border: 1.5px solid var(--hover-border);
           svg {
             animation: 1s linear social;
           }
         }
       }
       a.hover:hover {
-        border-bottom: 2px dashed #18193f;
+        border-bottom: 2px dashed var(--hover-border);
       }
     }
     footer {
@@ -213,7 +212,7 @@ import WorldMap from '@/icons/WorldMap.astro';
       font-size: 0.6rem;
       span {
         border-radius: 0.5rem;
-        background: #eee;
+        background: var(--background-color);
         padding: 0.2rem 0.6rem;
       }
     }

@@ -123,9 +123,9 @@ const SOCIAL_ICONS = {
     </div>
     <!-- <figure>
       <dir class="notPrint">
-        <img src={image} alt={alias} />
+        <image src={image} alt={alias} />
       </dir>
-      <img src="./DAQM3D.jpg" alt={alias} />
+      <image src="./DAQM3D.jpg" alt={alias} />
       <h2>DAQM3D</h2>
     </figure> -->
     <figure>
@@ -159,12 +159,12 @@ const SOCIAL_ICONS = {
         }
       }
       h2 {
-        color: #444;
+        color: var(--text2-color);
         font-weight: 500;
         font-size: 1rem;
       }
       span {
-        color: #666;
+        color: var(--text3-color);
         display: flex;
         align-items: center;
         gap: 0.25rem;
@@ -173,33 +173,33 @@ const SOCIAL_ICONS = {
       }
     }
 
-    :is(.info:hover) h1 svg {
+    :is(.info) h1 svg {
       animation: 1s infinite alternate DAQM3D;
     }
-    :is(.info:hover) h1 div.letras {
-      animation: 1s linear forwards contarLetras;
+    :is(.info) h1 div.letras {
+      animation: 0.5s linear forwards contarLetras;
     }
-    :is(.info:hover) h1 div.letras {
-      animation-delay: calc(var(--time) * 1s);
+    :is(.info) h1 div.letras {
+      animation-delay: calc(var(--time) * 2s);
     }
   }
 
   footer {
     display: flex;
-    gap: 4px;
+    gap: 6px;
     margin-top: 8px;
     a {
       padding: 5px;
       display: inline-flex;
-      border: 1.5px solid #cfcfcfcb;
-      border-radius: 5px;
+      border: 1.5px solid var(--border);
+      border-radius: 0.5rem;
       transition:
         background 0.3s ease-in-out,
         border 0.5s ease-in-out;
     }
     a:hover {
-      background: #5bfa5b;
-      border: 1.5px solid #18193f;
+      background: var(--background);
+      border: 1.5px solid var(--hover-border);
       svg {
         animation: 1s linear social;
       }
@@ -227,31 +227,30 @@ const SOCIAL_ICONS = {
       bottom: 20px;
       left: 70%;
       transform: translateX(-50%);
-      color: #fafafa;
       font-size: 1rem;
-      background: #5bfa5b;
+      background: linear-gradient(
+        var(--gradient-colorA),
+        var(--main-color)
+      );
       width: 80%;
       text-align: center;
       padding: 5px 10px;
       border-radius: 10px;
       opacity: 0;
-      text-shadow: #18193f 1px 1px 10px;
+      text-shadow: var(--text-color) 1px 1px 10px;
       transition: 0.5s;
     }
     dir {
       width: 100%;
       height: 100%;
-      /* inset:0;
-      background-color: #18193f;*/
-
-      background: linear-gradient(#5bfa5b, #18193f);
+      background: linear-gradient(
+        var(--gradient-colorA),
+        var(--gradient-colorB)
+      );
       border-radius: 15px;
       transition: 0.5s;
 
       img {
-        /*position: absolute;
-        top: 0;
-        left: 0; */
         width: 100%;
         object-fit: cover;
         transition: 0.5s;
@@ -263,6 +262,7 @@ const SOCIAL_ICONS = {
     transform: perspective(900px) translateX(-5%)
       rotateX(25deg) translateZ(0);
     box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 35px 32px -8px var(--text2-color);
   }
   figure:hover dir img {
     opacity: 0;
@@ -275,18 +275,28 @@ const SOCIAL_ICONS = {
   figure:hover > h2 {
     opacity: 1;
     transform: translate3d(-40%, 0%, 100px);
-
-    /*    bottom: 20px; */
   }
-
   @media print {
-    .info footer.print {
-      display: grid;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(200px, 1fr)
-      );
-      gap: 0.5rem 1rem;
+    .container {
+      :is(.info) h1 div.letras {
+        background: var(--color-black);
+        color: transparent;
+        -webkit-background-clip: text;
+      }
+    }
+    .info {
+      h2,
+      span {
+        opacity: 80%;
+      }
+      footer.print {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(200px, 1fr)
+        );
+        gap: 0.5rem 1rem;
+      }
     }
     figure > img {
       opacity: 1;

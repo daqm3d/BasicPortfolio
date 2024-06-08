@@ -39,9 +39,9 @@ import '@fontsource-variable/playfair-display';
     <title>{title}</title>
   </head>
   <body class="scene">
-    <div class="sun"></div>
+    <div class="print sun"></div>
     <slot />
-    <div class="bg"></div>
+    <div class="print bg"></div>
   </body>
 </html>
 
@@ -55,7 +55,53 @@ import '@fontsource-variable/playfair-display';
 
 <style is:global>
   :root {
+    /* Paleta de Colores */
+    --color-write: #ffffff;
+    --color-write-nice: #fafafa;
+    --color-write-black: #eee;
+    --color-write-black2: #bbb;
+
+    --color-black: #000;
+    --color-black2: rgb(27, 32, 41);
+    --color-black-nice: #1b1d1e;
+
+    --color-black-write: #444;
+    --color-black-write2: #666;
+    --color-blue: #18193f;
+    --color-blue2: #a6d8ff;
+    --color-verde: #5bfa5b;
+
+    /* Variables de colores */
+    --body-color: var(--color-blue2);
+    --main-color: var(--color-write-nice);
+    --background-color: var(--color-write-black);
+    --background: var(--color-verde);
+    --text-color: var(--color-black);
+    --text2-color: var(--color-black-write);
+    --text3-color: var(--color-black-write2);
+    --hover-border: var(--color-black);
+    --border: var(--color-write-black2);
+    --gradient-colorA: var(--color-verde);
+    --gradient-colorB: var(--color-blue);
   }
+  body:is(.dark) {
+    --body-color: var(--color-black2);
+    --main-color: var(--color-black-nice);
+    --background-color: var(--color-black);
+    --background: var(--color-verde);
+    --background: linear-gradient(
+      var(--gradient-colorA),
+      var(--gradient-colorB)
+    );
+    --text-color: var(--color-write);
+    --text2-color: var(--color-write-black);
+    --text3-color: var(--color-write-black2);
+    --hover-border: var(--color-write);
+    --border: var(--color-write-black2);
+    --gradient-colorA: var(--color-verde);
+    --gradient-colorB: var(--color-blue);
+  }
+
   @keyframes DAQM3D {
     from {
       transform: translateX(10px);
@@ -77,10 +123,13 @@ import '@fontsource-variable/playfair-display';
   }
   @keyframes contarLetras {
     from {
-      color: #18193f;
+      color: var(--text-color);
     }
     to {
-      background: linear-gradient(#5bfa5b, #18193f);
+      background: linear-gradient(
+        var(--gradient-colorA),
+        var(--gradient-colorB)
+      );
       color: transparent;
       -webkit-background-clip: text;
     }
@@ -111,6 +160,7 @@ import '@fontsource-variable/playfair-display';
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: var(--text-color);
   }
 
   h1,
@@ -131,11 +181,11 @@ import '@fontsource-variable/playfair-display';
   /* Animación Dia Noche */
   .scene {
     height: 100%;
-    background: #a6d8ff;
+    background: var(--body-color);
     display: flex;
     justify-content: center;
     .sun {
-      z-index: 1;
+      /* z-index: 1; */
       position: fixed;
       top: 10%;
       left: 10%;
@@ -160,7 +210,8 @@ import '@fontsource-variable/playfair-display';
   }
 
   .dark {
-    background: #222833;
+    background: var(--body-color);
+    fill: currentColor;
     height: 100%;
     .sun {
       left: 85%;
@@ -173,7 +224,7 @@ import '@fontsource-variable/playfair-display';
       left: 20px;
       width: 100px;
       height: 100px;
-      background: #222833;
+      background: var(--body-color);
       border-radius: 50%;
     }
   }
@@ -215,6 +266,9 @@ import '@fontsource-variable/playfair-display';
   }
 
   @media print {
+    .dark {
+      fill: var(--color-black);
+    }
     .notPrint {
       display: none;
     }

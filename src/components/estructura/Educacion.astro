@@ -1,39 +1,54 @@
 ---
-import Section from "@/components/Section.astro"
-import { education } from "@/jsons/cv-AP.json"
+import Section from '@/components/Section.astro';
+import { education } from '@/jsons/cv-AP.json';
 ---
+
 <Section id="Educacion" title="Educación">
   {
-    education.map( ({area, institution, startDate, endDate}) => {        
-      return(
-        <article>
-          <header>
-            <time datetime={`$[startDate - endDate ?? "actualmente" ]`} >Año {startDate}-{ endDate? ` ${endDate}` : "Actualmente" }</time>
-          </header>
-          <footer>
-            <h3>{area}</h3>
-            <h4>{institution}</h4>
-          </footer>
-        </article>
-      )
-    })
+    education.map(
+      ({ area, institution, startDate, endDate }) => {
+        return (
+          <article>
+            <header>
+              <time
+                datetime={`$[startDate - endDate ?? "actualmente" ]`}
+              >
+                Año {startDate}-
+                {endDate ? ` ${endDate}` : 'Actualmente'}
+              </time>
+            </header>
+            <footer>
+              <h3>{area}</h3>
+              <h4>{institution}</h4>
+            </footer>
+          </article>
+        );
+      }
+    )
   }
 </Section>
 <style>
-
-  article{
+  article {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-gap: 1rem;
-    h3{
-        font-size: .9rem;
-        font-weight:800;
+    h3 {
+      font-size: 0.9rem;
+      font-weight: 800;
     }
-    h4, header{
-        font-size: .8rem;
-        opacity: 40%;
-        font-weight: 500;
+    h4,
+    time {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text3-color);
     }
   }
- }
+  @media print {
+    article {
+      h4,
+      time {
+        opacity: 60%;
+      }
+    }
+  }
 </style>

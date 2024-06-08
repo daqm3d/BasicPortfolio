@@ -50,19 +50,24 @@ uniqueKeywords.forEach((tap) => {
     gap: 0.5rem;
     h3 {
       font-size: 1rem;
-      opacity: 40%;
       font-weight: 500;
+      color: var(--text3-color);
     }
     li {
       border-radius: 0.5rem;
-      background: #eee;
+      background: var(--background-color);
       padding: 0.2rem 0.6rem;
     }
   }
   @media print {
-    li {
-      border: 2px solid #eee;
-      padding: 0.1rem 0.3rem;
+    ul {
+      h3 {
+        opacity: 60%;
+      }
+      li {
+        border: 2px solid var(--color-write-black);
+        padding: 0.1rem 0.3rem;
+      }
     }
   }
 </style>

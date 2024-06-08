@@ -54,13 +54,14 @@ import { work } from '@/jsons/cv-AP.json';
       font-size: 1rem;
     }
     h4,
-    header {
+    time,
+    p {
       font-size: 0.8rem;
-      opacity: 40%;
       font-weight: 500;
+      color: var(--text3-color);
     }
     li {
-      color: #444;
+      color: var(--text2-color);
       letter-spacing: -0.05rem;
     }
   }
@@ -74,6 +75,15 @@ import { work } from '@/jsons/cv-AP.json';
       header {
         flex-direction: row;
         gap: 1rem;
+      }
+    }
+  }
+  @media print {
+    article {
+      h4,
+      time,
+      p {
+        opacity: 60%;
       }
     }
   }

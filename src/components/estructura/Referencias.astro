@@ -73,28 +73,27 @@ import Phone from '@/icons/Phone.astro';
     }
     h4 {
       font-size: 0.8rem;
-      opacity: 40%;
       font-weight: 500;
+      color: var(--text3-color);
     }
     footer {
       display: flex;
-      gap: 4px;
+      gap: 6px;
       margin-top: 8px;
       a {
         padding: 5px;
-        color: #777;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border: 1.5px solid #cfcfcfcb;
-        border-radius: 5px;
+        border: 1.5px solid var(--border);
+        border-radius: 0.5rem;
         transition:
           background 0.3s ease-in-out,
           border 0.5s ease-in-out;
       }
       a:hover {
-        background: #5bfa5b;
-        border: 1.5px solid #18193f;
+        background: var(--background);
+        border: 1.5px solid var(--hover-border);
         svg {
           animation: 1s linear social;
         }
@@ -103,6 +102,11 @@ import Phone from '@/icons/Phone.astro';
   }
 
   @media print {
+    ul {
+      h4 {
+        opacity: 60%;
+      }
+    }
     footer.print {
       display: grid;
       grid-template-columns: repeat(

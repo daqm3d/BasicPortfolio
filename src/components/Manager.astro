@@ -114,9 +114,8 @@ const info = profiles.map(({ network, usernam, url }) => {
   }
   footer {
     z-index: 1;
-
-    background: #fdfdfd;
-    border-top: 1px solid #eee;
+    background: var(--main-color);
+    border-top: 1px solid var(--border);
     position: fixed;
     bottom: 0%;
     width: 100%;
@@ -134,6 +133,7 @@ const info = profiles.map(({ network, usernam, url }) => {
   kbd {
     background-color: #eee;
     border: 1px solid #cfcfcfcb;
+
     border-radius: 4px;
     padding: 2px 4px;
     margin-left: 0.5rem;

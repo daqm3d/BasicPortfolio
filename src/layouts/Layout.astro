@@ -2,7 +2,7 @@
 const { title, description, alias } = Astro.props;
 // Supports weights 400-900
 import '@fontsource-variable/playfair-display';
-import imgBody from '#/city.png';
+import imgBody from '#city.png';
 ---
 
 <!doctype html>
@@ -11,12 +11,12 @@ import imgBody from '#/city.png';
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <meta name="robots" content="index, follow    " />
+    <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#a6d8ff" />
     <link
       rel="icon"
       type="image/svg+xml"
-      href="./favicon.svg"
+      href="/favicon.svg"
     />
     <meta name="generator" content={Astro.generator} />
 
@@ -45,7 +45,7 @@ import imgBody from '#/city.png';
     <div
       class="print bg"
       style={{
-        backgroundImage: `url(${imgBody.src})`,
+        background: `url(${imgBody.src})`,
       }}
     >
     </div>
@@ -209,7 +209,7 @@ import imgBody from '#/city.png';
       bottom: 0;
       width: 100vw;
       height: 445px;
-      /* background-image: url(./city.png); */
+      /* background: url(./city.png); */
       background-size: 1344px;
       background-repeat: repeat-x;
       animation: animateBg 30s linear infinite;

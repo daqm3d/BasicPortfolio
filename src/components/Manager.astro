@@ -41,6 +41,8 @@ const info = profiles.map(({ network, usernam, url }) => {
   if (ninja != null) {
     const info = ninja.getAttribute('data-info') ?? '[]';
     const parseInfo = JSON.parse(info);
+    console.log('parseInfo');
+    console.log(parseInfo);
     const data = parseInfo.map((item) => {
       return {
         ...item,

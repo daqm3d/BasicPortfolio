@@ -3,6 +3,7 @@ const { title, description, alias } = Astro.props;
 // Supports weights 400-900
 import '@fontsource-variable/playfair-display';
 import imgBody from '#/city.png';
+import favicon from '#/favicon.gif';
 ---
 
 <!doctype html>
@@ -16,7 +17,7 @@ import imgBody from '#/city.png';
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/favicon.svg"
+      href={favicon.src}
     />
     <meta name="generator" content={Astro.generator} />
 
@@ -45,7 +46,7 @@ import imgBody from '#/city.png';
     <div
       class="print bg"
       style={{
-        background: `url(${imgBody.src})`,
+        background: `url(var(--imgBody, ${imgBody.src}))`,
       }}
     >
     </div>
@@ -55,8 +56,11 @@ import imgBody from '#/city.png';
 <script>
   let sun = document.querySelector('.sun');
   let body = document.querySelector('body');
+  let ninja = document.querySelector('ninja-keys');
+
   sun.onclick = function () {
     body.classList.toggle('dark');
+    ninja.classList.toggle('dark');
   };
 </script>
 

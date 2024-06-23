@@ -8,16 +8,19 @@ import Phone from '@/icons/Phone.astro';
 import GitHub from '@/icons/GitHub.astro';
 import LinkedIn from '@/icons/LinkedIn.astro';
 
+import Avatar from '#/DAQM3D.png';
+import Imagen from '#/DAQM3D.jpg';
+1;
 const {
   name,
   alias,
   label,
-  image,
   email,
   phone,
   location,
   profiles,
 } = basics;
+
 /* const splitAlias = alias.split(''); */
 const { city, address, region } = location;
 
@@ -121,18 +124,11 @@ const SOCIAL_ICONS = {
         } -->
       </footer>
     </div>
-    <!-- <figure>
-      <dir class="notPrint">
-        <image src={image} alt={alias} />
-      </dir>
-      <image src="./DAQM3D.jpg" alt={alias} />
-      <h2>DAQM3D</h2>
-    </figure> -->
     <figure>
       <dir class="notPrint">
-        <img src={image} alt={alias} />
+        <img src={Avatar.src} alt={alias} />
       </dir>
-      <img src="./DAQM3D.jpg" alt={alias} />
+      <img src={Imagen.src} alt={alias} />
       <h2>DAQM3D</h2>
     </figure>
   </article>

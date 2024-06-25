@@ -1,4 +1,4 @@
-# CurriFolio Minimalista<picture><source media="(prefers-color-scheme: dark)" srcset="./public/Briefcase.webp"><source media="(prefers-color-scheme: light)" srcset="./public/Briefcase.webp"><img align="right" valign="center" height="60" width="60" src="./public/Briefcase.webp" alt="CurriFolio logo" /></picture>
+# CurriFolio Minimalista<picture><img align="right" valign="center" height="60" width="60" src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Briefcase.webp" alt="CurriFolio logo" /></picture>
 
 <img valign="center"  width="900" src="./public/PortfolioDAQM3D.png" alt="CurriFolio logo" />
 

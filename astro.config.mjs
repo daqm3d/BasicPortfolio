@@ -2,25 +2,22 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  /* buildOptions: {
-    site: 'https://daqm3d.github.io',
-    base: 'BasicPortfolio',
-  },
-  devOptions: {
-    base: '',
-  },
-
+  site: 'https://daqm3d.github.io',
+  base: 'BasicPortfolio',
   server: {
     host: true,
+    /*
     hmr: {
       //            host: 'IP'
+    },*/
+    devOptions: {
+      enabled: true,
+      site: 'https://daqm3d.github.io',
+      base: 'D',
     },
-  }, */
-  server: ({ command }) => ({
-    base: command === 'dev' ? '' : 'BasicPortfolio',
-    host: true,
-    hmr: {
-      //            host: 'IP'
+    buildOptions: {
+      site: 'https://daqm3d.github.io',
+      base: 'B',
     },
-  }),
+  },
 });

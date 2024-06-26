@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  buildOptions: {
+  /* buildOptions: {
     site: 'https://daqm3d.github.io',
     base: 'BasicPortfolio',
   },
@@ -15,5 +15,12 @@ export default defineConfig({
     hmr: {
       //            host: 'IP'
     },
-  },
+  }, */
+  server: ({ command }) => ({
+    base: command === 'dev' ? '' : 'BasicPortfolio',
+    host: true,
+    hmr: {
+      //            host: 'IP'
+    },
+  }),
 });

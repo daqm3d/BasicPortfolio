@@ -41,7 +41,7 @@ console.log(plantillaFondoPrint);
   <Manager />
 </Layout>
 
-<style define:vars={{ plantillaFondoPrint: plantillaFondoPrint.src }}>
+<style define:vars={{ plantillaFondoPrint: `url(${plantillaFondoPrint.src})` }}>
   main {
     z-index: 1;
     background: radial-gradient(var(--main-color) 90%, transparent);
@@ -71,9 +71,7 @@ console.log(plantillaFondoPrint);
     }
     main {
       padding: 0 4rem;
-      background: url(./plantillaFondoPrint.webp);
-      /*     background: url(var(--plantillaFondoPrint)); */
-
+      background-image: var(--plantillaFondoPrint);
       background-size: 100%;
       print-color-adjust: exact;
       -webkit-print-color-adjust: exact;

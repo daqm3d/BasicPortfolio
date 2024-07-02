@@ -2,7 +2,7 @@
 
 <img valign="center"  width="900" src="./public/PortfolioDAQM3D.png" alt="CurriFolio logo" />
 
-Aplicación que permite tener un **Currículo - Portafolio** minimalista, el cual cuenta con la siguiente estructura: Experiencia Profesional, Conocimientos, Cursos, Estudios, Referencias. Además, **este cuenta con las siguientes características:**
+Aplicación que permite tener un **Currículo - Portafolio** minimalista, el cual cuenta con la siguiente estructura: Experiencia Profesional, Proyectos, Conocimientos, Cursos, Estudios, Referencias. Además, **este cuenta con las siguientes características:**
 
 - [x] Modo responsivo.
 - [x] Tema de modo Light y Dark.
@@ -28,9 +28,9 @@ Modifica los estilos y las fuentes a tu conveniencia, una vez termines edita la 
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/File%20Folder.webp" alt="File Folder" width="25" height="25" /> Conocimientos Adquiridos
 
-- Creación de aplicaciones en [Astro](https://astro.build/)
-- Uso de librería [ninja-Keys](https://github.com/ssleptsov/ninja-keys)
-- Uso de propiedad css display [unset](https://dev.to/lupitacode/palabras-clave-en-css-initial-inherit-unset-y-revert-11ob)
+- Creación de aplicaciones en [Astro](https://astro.build/).
+- Uso de librería [ninja-Keys](https://github.com/ssleptsov/ninja-keys).
+- Uso de propiedad css display [unset](https://dev.to/lupitacode/palabras-clave-en-css-initial-inherit-unset-y-revert-11ob).
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Open%20Book.webp" alt="Open Book" width="25" height="25" /> Referencia
 

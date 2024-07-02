@@ -5,40 +5,29 @@ import { work } from '@/jsons/cv-AP.json';
 
 <Section id="Experiencia" title="Experiencia Profesional">
   {
-    work.map(
-      ({
-        name,
-        startDate,
-        endDate,
-        address,
-        position,
-        summary,
-      }) => {
-        return (
-          <article>
-            <header>
-              <time datetime={startDate}>
-                De {startDate}
-              </time>
-              <time datetime={endDate ?? 'actualmente'}>
-                {' '}
-                {endDate ? `Al ${endDate}` : 'Actualmente'}
-              </time>
-              <p>{address}</p>
-            </header>
-            <footer>
-              <h3>{name}</h3>
-              <h4>Cargo: {position}</h4>
-              <ul>
-                {summary.map((dato) => {
-                  return <li>- {dato}</li>;
-                })}
-              </ul>
-            </footer>
-          </article>
-        );
-      }
-    )
+    work.map(({ name, startDate, endDate, address, position, summary }) => {
+      return (
+        <article>
+          <header>
+            <time datetime={startDate}>De {startDate}</time>
+            <time datetime={endDate ?? 'actualmente'}>
+              {' '}
+              {endDate ? `Al ${endDate}` : 'Actualmente'}
+            </time>
+            <p>{address}</p>
+          </header>
+          <footer>
+            <h3>{name}</h3>
+            <h4>Cargo: {position}</h4>
+            <ul>
+              {summary.map((dato) => {
+                return <li>- {dato}</li>;
+              })}
+            </ul>
+          </footer>
+        </article>
+      );
+    })
   }
 </Section>
 <style>
@@ -80,6 +69,7 @@ import { work } from '@/jsons/cv-AP.json';
   }
   @media print {
     article {
+      grid-template-columns: 1fr 6fr;
       h4,
       time,
       p {

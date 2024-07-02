@@ -263,7 +263,7 @@ const SOCIAL_ICONS = {
     transform: translate3d(-40%, 0%, 100px);
   }
   @media print {
-    .info {
+    .container .info {
       h1 {
         print-color-adjust: exact;
         color-adjust: exact;
@@ -277,6 +277,7 @@ const SOCIAL_ICONS = {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 0.5rem 1rem;
+        margin: 0;
       }
     }
     figure > img {

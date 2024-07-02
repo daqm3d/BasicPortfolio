@@ -8,65 +8,60 @@ import Phone from '@/icons/Phone.astro';
 <Section id="Referencias" title="Referencias">
   <ul>
     {
-      references.map(
-        ({ name, reference, phone, email }) => {
-          return (
-            <li>
-              <article>
-                <header>
-                  <h3>{name}</h3>
-                  <h4>{reference}</h4>
-                </header>
-                <footer class="notPrint">
-                  {email && (
-                    <a
-                      href={`mailto:${email}`}
-                      title={`Contacte con ${name} mediante el correo ${email}`}
-                      target="_blank"
-                    >
-                      <Mail />
-                    </a>
-                  )}
-                  {phone && (
-                    <a
-                      href={`tel:${phone}`}
-                      title={`Contacte con ${name} mediante el numero ${phone}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Phone />
-                    </a>
-                  )}
-                </footer>
-                <footer class="print">
-                  {email && (
-                    <span>
-                      <Mail />
-                      {email}
-                    </span>
-                  )}
-                  {phone && (
-                    <span>
-                      <Phone />
-                      {phone}
-                    </span>
-                  )}
-                </footer>
-              </article>
-            </li>
-          );
-        }
-      )
+      references.map(({ name, reference, phone, email }) => {
+        return (
+          <li>
+            <article>
+              <header>
+                <h3>{name}</h3>
+                <h4>{reference}</h4>
+              </header>
+              <footer class="notPrint">
+                {email && (
+                  <a
+                    href={`mailto:${email}`}
+                    title={`Contacte con ${name} mediante el correo ${email}`}
+                    target="_blank"
+                  >
+                    <Mail />
+                  </a>
+                )}
+                {phone && (
+                  <a
+                    href={`tel:${phone}`}
+                    title={`Contacte con ${name} mediante el numero ${phone}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Phone />
+                  </a>
+                )}
+              </footer>
+              <footer class="print">
+                {email && (
+                  <span>
+                    <Mail />
+                    {email}
+                  </span>
+                )}
+                {phone && (
+                  <span>
+                    <Phone />
+                    {phone}
+                  </span>
+                )}
+              </footer>
+            </article>
+          </li>
+        );
+      })
     }
   </ul>
 </Section>
 <style>
   ul {
     display: grid;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(200px, 1fr)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     h3 {
       font-size: 1rem;
@@ -109,10 +104,7 @@ import Phone from '@/icons/Phone.astro';
     }
     footer.print {
       display: grid;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(160px, 1fr)
-      );
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 0.5rem 1rem;
       span {
         display: flex;

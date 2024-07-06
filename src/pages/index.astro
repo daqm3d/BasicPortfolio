@@ -30,7 +30,7 @@ console.log(plantillaFondoPrint);
 
     <dir class="binomio">
       <Conocimientos />
-      <!--       <Cursos /> -->
+      <!-- <Cursos /> -->
     </dir>
 
     <div class="binomio">
@@ -62,15 +62,12 @@ console.log(plantillaFondoPrint);
   }
   @media print {
     @page {
-      /* size: Letter; */
-      size: A4;
-      --margin-cromiun: 10mm;
-      margin: var(--margin-cromiun, 0.5in) 0 var(--margin-cromiun, 0.5in) 0;
-      orphans: 0;
-      widows: 0;
+      size: Letter;
+      --margin-cromiun: 15mm;
+      margin: var(--margin-cromiun, 0.5in) 0;
     }
     main {
-      padding: 0 4rem;
+      padding: 0 3.5rem;
       background-image: var(--plantillaFondoPrint);
       background-size: 100%;
       print-color-adjust: exact;

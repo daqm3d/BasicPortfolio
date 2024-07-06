@@ -98,8 +98,14 @@ import Phone from '@/icons/Phone.astro';
 
   @media print {
     ul {
-      h4 {
-        opacity: 60%;
+      li {
+        break-inside: avoid;
+        @-moz-document url-prefix() {
+          break-inside: auto;
+        }
+        h4 {
+          opacity: 60%;
+        }
       }
     }
     footer.print {

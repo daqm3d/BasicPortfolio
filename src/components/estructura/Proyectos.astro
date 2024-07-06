@@ -6,76 +6,62 @@ import WorldMap from '@/icons/WorldMap.astro';
 ---
 
 <Section id="Proyectos" title="Proyectos">
-  <div hidden popover id="my-popover">
-    Greetings, one and all!
-  </div>
+  <div hidden popover id="my-popover">Greetings, one and all!</div>
   <ul>
     {
-      projects.map(
-        ({
-          name,
-          isActive,
-          description,
-          highlights,
-          url,
-          repo,
-        }) => {
-          return (
-            <li>
-              <article class="proyectos">
-                <header>
-                  <h3>
+      projects.map(({ name, isActive, description, highlights, url, repo }) => {
+        return (
+          <li>
+            <article class="proyectos">
+              <header>
+                <h3>
+                  <a
+                    class={isActive && 'hover'}
+                    href={isActive && url}
+                    title={`Ver el proyecto ${name}`}
+                    target="_blank"
+                  >
+                    {name}
+                  </a>
+                  {isActive && <span>&bull;</span>}
+                  <button hidden popovertarget="my-popover">
+                    <WorldMap width="20" height="20" />
+                  </button>
+
+                  {repo && (
                     <a
-                      class={isActive && 'hover'}
-                      href={isActive && url}
-                      title={`Ver el proyecto ${name}`}
+                      class="notPrint"
+                      href={`${url}`}
+                      title={`Visita el repo del proyecto ${name}`}
                       target="_blank"
                     >
-                      {name}
+                      <GitHub width="20" height="20" />
                     </a>
-                    {isActive && <span>&bull;</span>}
-                    <button
-                      hidden
-                      popovertarget="my-popover"
-                    >
-                      <WorldMap width="20" height="20" />
-                    </button>
-
-                    {repo && (
-                      <a
-                        class="notPrint"
-                        href={`${url}`}
-                        title={`Visita el repo del proyecto ${name}`}
-                        target="_blank"
-                      >
-                        <GitHub width="20" height="20" />
-                      </a>
-                    )}
-                  </h3>
-                  <p>{description}</p>
-                  {isActive && (
-                    <span class="print">
-                      <WorldMap />
-                      {url}
-                    </span>
                   )}
-                  {repo && (
-                    <span class="print">
-                      <GitHub />
-                      {repo}
-                    </span>
-                  )}
-                </header>
-                <footer>
-                  {highlights.map((highlight) => {
-                    return <span>{highlight}</span>;
-                  })}
-                </footer>
-              </article>
-            </li>
-          );
-        }
-      )
+                </h3>
+                <p>{description}</p>
+                {isActive && (
+                  <span class="print">
+                    <WorldMap />
+                    {url}
+                  </span>
+                )}
+                {repo && (
+                  <span class="print">
+                    <GitHub />
+                    {repo}
+                  </span>
+                )}
+              </header>
+              <footer>
+                {highlights.map((highlight) => {
+                  return <span>{highlight}</span>;
+                })}
+              </footer>
+            </article>
+          </li>
+        );
+      })
     }
   </ul>
 </Section>
@@ -84,12 +70,8 @@ import WorldMap from '@/icons/WorldMap.astro';
   function startDrag(event) {
     const card = event.target.closest('article');
 
-    let starX =
-      (event.pageX ?? event.touches[0].pageX) -
-      card.offsetLeft;
-    let starY =
-      (event.pageY ?? event.touches[0].pageY) -
-      card.offsetTop;
+    let starX = (event.pageX ?? event.touches[0].pageX) - card.offsetLeft;
+    let starY = (event.pageY ?? event.touches[0].pageY) - card.offsetTop;
     card.style.setProperty('--x', starX + 'px');
     card.style.setProperty('--y', starY + 'px');
     console.log(card);
@@ -110,10 +92,7 @@ import WorldMap from '@/icons/WorldMap.astro';
 <style>
   ul {
     display: grid;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(260px, 1fr)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
   }
 
@@ -137,11 +116,7 @@ import WorldMap from '@/icons/WorldMap.astro';
       top: var(--y);
       left: var(--x);
       transform: translate(-50%, -50%);
-      background: radial-gradient(
-          #5bfa5b,
-          transparent,
-          transparent
-        ),
+      background: radial-gradient(#5bfa5b, transparent, transparent),
         radial-gradient(#18193f, transparent, transparent);
       width: 100%;
       height: 100%;
@@ -218,6 +193,14 @@ import WorldMap from '@/icons/WorldMap.astro';
     }
   }
   @media print {
+    ul {
+      li {
+        break-inside: avoid;
+        @-moz-document url-prefix() {
+          break-inside: auto;
+        }
+      }
+    }
     footer span {
       border: 2px solid #eee;
       padding: 0.1rem 0.3rem;

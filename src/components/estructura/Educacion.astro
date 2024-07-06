@@ -5,26 +5,21 @@ import { education } from '@/jsons/cv-AP.json';
 
 <Section id="Educacion" title="Educación">
   {
-    education.map(
-      ({ area, institution, startDate, endDate }) => {
-        return (
-          <article>
-            <header>
-              <time
-                datetime={`$[startDate - endDate ?? "actualmente" ]`}
-              >
-                Año {startDate}-
-                {endDate ? ` ${endDate}` : 'Actualmente'}
-              </time>
-            </header>
-            <footer>
-              <h3>{area}</h3>
-              <h4>{institution}</h4>
-            </footer>
-          </article>
-        );
-      }
-    )
+    education.map(({ area, institution, startDate, endDate }) => {
+      return (
+        <article>
+          <header>
+            <time datetime={`$[startDate - endDate ?? "actualmente" ]`}>
+              Año {startDate}-{endDate ? ` ${endDate}` : 'Actualmente'}
+            </time>
+          </header>
+          <footer>
+            <h3>{area}</h3>
+            <h4>{institution}</h4>
+          </footer>
+        </article>
+      );
+    })
   }
 </Section>
 <style>
@@ -45,6 +40,10 @@ import { education } from '@/jsons/cv-AP.json';
   }
   @media print {
     article {
+      break-inside: avoid;
+      @-moz-document url-prefix() {
+        break-inside: auto;
+      }
       h4,
       time {
         opacity: 60%;

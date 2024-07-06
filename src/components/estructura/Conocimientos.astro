@@ -3,15 +3,11 @@ import Section from '@/components/Section.astro';
 import { skills, languages } from '@/jsons/cv-AP.json';
 
 const filter = [];
-const uniqueKeywords = new Set(
-  skills.map((key) => key.keywords[0])
-);
+const uniqueKeywords = new Set(skills.map((key) => key.keywords[0]));
 uniqueKeywords.forEach((tap) => {
   filter.push({
     ['key']: tap,
-    ['tap']: skills.filter((key) =>
-      key.keywords.includes(tap)
-    ),
+    ['tap']: skills.filter((key) => key.keywords.includes(tap)),
   });
 });
 ---
@@ -61,6 +57,10 @@ uniqueKeywords.forEach((tap) => {
   }
   @media print {
     ul {
+      break-inside: avoid;
+      @-moz-document url-prefix() {
+        break-inside: auto;
+      }
       h3 {
         opacity: 60%;
       }

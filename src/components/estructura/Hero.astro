@@ -263,21 +263,27 @@ const SOCIAL_ICONS = {
     transform: translate3d(-40%, 0%, 100px);
   }
   @media print {
-    .container .info {
-      h1 {
-        print-color-adjust: exact;
-        color-adjust: exact;
-        -webkit-print-color-adjust: exact;
+    .container {
+      break-inside: avoid;
+      @-moz-document url-prefix() {
+        break-inside: auto;
       }
-      h2,
-      span {
-        opacity: 80%;
-      }
-      footer.print {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 0.5rem 1rem;
-        margin: 0;
+      .info {
+        h1 {
+          print-color-adjust: exact;
+          color-adjust: exact;
+          -webkit-print-color-adjust: exact;
+        }
+        h2,
+        span {
+          opacity: 80%;
+        }
+        footer.print {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 0.5rem 1rem;
+          margin: 0;
+        }
       }
     }
     figure > img {

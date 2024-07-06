@@ -31,6 +31,7 @@ Modifica los estilos y las fuentes a tu conveniencia, una vez termines edita la 
 - Creación de aplicaciones en [Astro](https://astro.build/).
 - Uso de librería [ninja-Keys](https://github.com/ssleptsov/ninja-keys).
 - Uso de propiedad css display [unset](https://dev.to/lupitacode/palabras-clave-en-css-initial-inherit-unset-y-revert-11ob).
+- Uso de propiedad css break-inside [avoid](https://www.w3schools.com/cssref/pr_break-inside.php).
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Objects/Open%20Book.webp" alt="Open Book" width="25" height="25" /> Referencia
 

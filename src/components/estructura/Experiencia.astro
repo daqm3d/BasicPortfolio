@@ -69,7 +69,11 @@ import { work } from '@/jsons/cv-AP.json';
   }
   @media print {
     article {
-      grid-template-columns: 1fr 6fr;
+      break-inside: avoid;
+      @-moz-document url-prefix() {
+        /* No tiene compatibilidad completa con break-inside: avoid */
+        break-inside: auto;
+      }
       h4,
       time,
       p {

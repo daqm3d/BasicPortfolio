@@ -17,9 +17,7 @@ import { certificates } from '@/jsons/cv-AP.json';
                 <h4>{issuer}</h4>
               </header>
               <footer>
-                <time
-                  datetime={`$[startDate - endDate ?? "actualmente" ]`}
-                >
+                <time datetime={`$[startDate - endDate ?? "actualmente" ]`}>
                   Año {date ? ` ${date}` : 'Actualmente'}
                 </time>
               </footer>
@@ -33,10 +31,7 @@ import { certificates } from '@/jsons/cv-AP.json';
 <style>
   ul {
     display: grid;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(160px, 1fr)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1rem;
     a:hover {
       text-decoration: underline;
@@ -53,8 +48,14 @@ import { certificates } from '@/jsons/cv-AP.json';
   }
   @media print {
     ul {
-      h4 {
-        opacity: 60%;
+      li {
+        break-inside: avoid;
+        @-moz-document url-prefix() {
+          break-inside: auto;
+        }
+        h4 {
+          opacity: 60%;
+        }
       }
     }
   }

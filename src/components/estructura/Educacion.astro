@@ -9,7 +9,7 @@ import { education } from '@/jsons/cv-AP.json';
       return (
         <article>
           <header>
-            <time datetime={`$[startDate - endDate ?? "actualmente" ]`}>
+            <time datetime={endDate ?? "actualmente" }>
               Año {startDate}-{endDate ? ` ${endDate}` : 'Actualmente'}
             </time>
           </header>

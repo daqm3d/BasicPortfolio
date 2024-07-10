@@ -12,8 +12,7 @@ import Manager from '@/components/Manager.astro';
 import { basics } from '@/jsons/cv-AP.json';
 const { alias, label } = basics;
 
-import plantillaFondoPrint from '#/plantillaFondoPrint.webp';
-console.log(plantillaFondoPrint);
+import plantillaFondoPrint from '@/img/plantillaFondoPrint.webp';
 ---
 
 <Layout
@@ -28,10 +27,10 @@ console.log(plantillaFondoPrint);
 
     <Proyectos />
 
-    <dir class="binomio">
+    <div class="binomio">
       <Conocimientos />
       <!-- <Cursos /> -->
-    </dir>
+    </div>
 
     <div class="binomio">
       <Educacion />

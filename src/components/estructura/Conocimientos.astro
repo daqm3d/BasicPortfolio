@@ -15,32 +15,36 @@ uniqueKeywords.forEach((tap) => {
 <Section id="Conocimientos" title="Conocimientos">
   {
     filter.map((data) => (
-      <ul>
+      <article>
         <h3>- {data.key}:</h3>
-        {data.tap.map(({ name }) => (
-          <li>
-            <span>{name}</span>
-          </li>
-        ))}
-      </ul>
+        <ul>
+          {data.tap.map(({ name }) => (
+            <li>
+              <span>{name}</span>
+            </li>
+          ))}
+        </ul>
+      </article>
     ))
   }
-  <ul>
+  <article>
     <h3>- Idiomas:</h3>
-    {
-      languages.map(({ language, fluency }) => [
-        <li>
-          <span>
-            {language} {fluency}
-          </span>
-        </li>,
-      ])
-    }
-  </ul>
+    <ul>
+      {
+        languages.map(({ language, fluency }) => [
+          <li>
+            <span>
+              {language} {fluency}
+            </span>
+          </li>,
+        ])
+      }
+    </ul>
+  </article>
 </Section>
 
 <style>
-  ul {
+  article {
     display: inline-flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -49,14 +53,17 @@ uniqueKeywords.forEach((tap) => {
       font-weight: 500;
       color: var(--text3-color);
     }
-    li {
-      border-radius: 0.5rem;
-      background: var(--background-color);
-      padding: 0.2rem 0.6rem;
+    ul {
+      display: contents;
+      li {
+        border-radius: 0.5rem;
+        background: var(--background-color);
+        padding: 0.2rem 0.6rem;
+      }
     }
   }
   @media print {
-    ul {
+    article {
       break-inside: avoid;
       @-moz-document url-prefix() {
         break-inside: auto;

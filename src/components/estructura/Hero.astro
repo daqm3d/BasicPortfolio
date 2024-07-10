@@ -8,9 +8,9 @@ import Phone from '@/icons/Phone.astro';
 import GitHub from '@/icons/GitHub.astro';
 import LinkedIn from '@/icons/LinkedIn.astro';
 
-import Avatar from '#/DAQM3D.png';
-import Imagen from '#/DAQM3D.jpg';
-1;
+import Avatar from '@/img/DAQM3D.png';
+import Imagen from '@/img/DAQM3D.jpg';
+
 const { name, alias, label, email, phone, location, profiles } = basics;
 
 /* const splitAlias = alias.split(''); */
@@ -114,9 +114,9 @@ const SOCIAL_ICONS = {
       </footer>
     </div>
     <figure>
-      <dir class="notPrint">
+      <div class="notPrint">
         <img src={Avatar.src} alt={alias} />
-      </dir>
+      </div>
       <img src={Imagen.src} alt={alias} />
       <h2>DAQM3D</h2>
     </figure>
@@ -230,7 +230,7 @@ const SOCIAL_ICONS = {
       text-shadow: var(--text-color) 1px 1px 10px;
       transition: 0.5s;
     }
-    dir {
+    div {
       width: 100%;
       height: 100%;
       background: linear-gradient(var(--gradient-colorA), var(--gradient-colorB));
@@ -245,12 +245,12 @@ const SOCIAL_ICONS = {
       }
     }
   }
-  figure:hover dir {
+  figure:hover div {
     transform: perspective(900px) translateX(-5%) rotateX(25deg) translateZ(0);
     box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 35px 32px -8px var(--text2-color);
   }
-  figure:hover dir img {
+  figure:hover div img {
     opacity: 0;
   }
   figure:hover > img {

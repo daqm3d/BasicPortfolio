@@ -154,10 +154,7 @@
     {
       "name": "Linux",
       "level": "",
-      "keywords": [
-        "Herramientas y Tecnologías",
-        "Sistema Operativo"
-      ]
+      "keywords": ["Herramientas y Tecnologías", "Sistema Operativo"]
     },
     {
       "name": "MariaDB",
@@ -172,10 +169,7 @@
     {
       "name": "GIT",
       "level": "",
-      "keywords": [
-        "Herramientas y Tecnologías",
-        "Manejador de Versiones"
-      ]
+      "keywords": ["Herramientas y Tecnologías", "Manejador de Versiones"]
     },
     {
       "name": "PostgreSQL",
@@ -185,10 +179,7 @@
     {
       "name": "Proxmox",
       "level": "",
-      "keywords": [
-        "Herramientas y Tecnologías",
-        "Virtualization"
-      ]
+      "keywords": ["Herramientas y Tecnologías", "Virtualization"]
     },
     {
       "name": "Nginx",
@@ -198,10 +189,7 @@
     {
       "name": "Docker",
       "level": "",
-      "keywords": [
-        "Herramientas y Tecnologías",
-        "Virtualization"
-      ]
+      "keywords": ["Herramientas y Tecnologías", "Virtualization"]
     }
   ],
   "languages": [
@@ -228,15 +216,7 @@
       "name": "Intranet SUNAD",
       "isActive": true,
       "description": "Diseño de un Aplicativo web que permita la automatización de diversas funciones del area de RRHH como son los ARC, Recibos de pago, Constancia de trabajo y otros",
-      "highlights": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Laravel",
-        "MariaDB",
-        "Nginx",
-        "Docker"
-      ],
+      "highlights": ["HTML5", "CSS3", "JavaScript", "Laravel", "MariaDB", "Nginx", "Docker"],
       "url": "https://intranet.sunad.gob.ve/",
       "repo": null
     },
@@ -244,14 +224,7 @@
       "name": "Proyecto OVD-SUNAD",
       "isActive": true,
       "description": "Creación de un aplicativo web el cual permita gestionar y manejar las sustancias ilegales incautadas por los diversos organismos del estado que se reportan a la SUNAD",
-      "highlights": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "php",
-        "MariaDB",
-        "Nginx"
-      ],
+      "highlights": ["HTML5", "CSS3", "JavaScript", "php", "MariaDB", "Nginx"],
       "url": "https://incautaciones.sunad.gob.ve/",
       "repo": null
     },
@@ -259,13 +232,7 @@
       "name": "WEB SUNAD",
       "isActive": true,
       "description": "Implementación de un sitio web que permita la defunción de los avances en materia institucional y social de la Superintendencia Nacional Antidrogas - SUNAD",
-      "highlights": [
-        "HTML5",
-        "CSS3",
-        "WordPress",
-        "MariaDB",
-        "Apache"
-      ],
+      "highlights": ["HTML5", "CSS3", "WordPress", "MariaDB", "Apache"],
       "url": "https://www2.sunad.gob.ve/",
       "repo": null
     },
@@ -273,14 +240,8 @@
       "name": "WEB VEN911",
       "isActive": true,
       "description": "Diseño de un sitio web adaptativo para la difusión y concienciación de información del Centro de Comando, Control y Telecomunicaciones VEN9-1-1.",
-      "highlights": [
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Apache",
-        "GIT"
-      ],
-      "url": "https://project.com/",
+      "highlights": ["HTML5", "CSS3", "JavaScript", "Apache", "GIT"],
+      "url": "https://daqm3d.github.io/web-ven911",
       "repo": "https://www.github/daqm3d/web-ven911"
     }
   ],
@@ -315,13 +276,13 @@
     {
       "name": "Jose Sanchez",
       "reference": "SUNAD | Coordinador de Redes y Servidores",
-      "phone": "+58 4242344888",
+      "phone": "+584242344888",
       "email": "jsanchez@gmail.com"
     },
     {
       "name": "Taina Arvelo",
       "reference": "VEN911 | Coordinadora de Sistemas",
-      "phone": "+58 4241679693",
+      "phone": "+584241679693",
       "email": "tainarvelo@gmail.com"
     }
   ]

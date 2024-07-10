@@ -2,7 +2,7 @@
 const { title, description, alias } = Astro.props;
 // Supports weights 400-900
 import '@fontsource-variable/playfair-display';
-import imgBody from '#/city.png';
+import imgBody from '@/img/city.png';
 import favicon from '#/favicon.gif';
 ---
 
@@ -11,22 +11,28 @@ import favicon from '#/favicon.gif';
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
+    <meta name="keywords" content="FullStap Developer, Portfolio web, Portfolio, DAQM3D" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="application-name" content="CURRIFOLIO" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#a6d8ff" />
+    <meta name="preview" content=`Portfolio${alias}.png` />
+    <meta name="author" content="DAQM3D" />
+
     <link rel="icon" type="image/svg+xml" href={favicon.src} />
+    <!-- SEO 
+    <link rel="alternate" href="url alternativa de idioma" hreflang="en-GB" />
+    <link rel="canonical" href="pagina original" />
+    -->
+
     <meta name="generator" content={Astro.generator} />
 
     <!-- OPEN GRAPH -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://daqm3d.github.io/BasicPortfolio/" />
     <meta property="op:title" content={title} />
     <meta property="op:description" content={description} />
     <meta property="op:image" content=`Portfolio${alias}.png` />
     <meta property="op:image:alt" content=`Fotografía del Portfolio de ${alias}` />
-
-    <!-- SEO 
-    <link rel="alternate" href="url alternativa de idioma" hreflang="en-GB">
-    <link rel="canonical" href="pagina original">
-    -->
 
     <title>{title}</title>
   </head>

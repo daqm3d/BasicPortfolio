@@ -6,14 +6,11 @@ import { work } from '@/jsons/cv-AP.json';
 <Section id="Experiencia" title="Experiencia Profesional">
   {
     work.map(({ name, startDate, endDate, address, position, summary }) => {
-      let dataStart = new Date(startDate).toDateString();
-      let dataEnd = new Date(endDate).toDateString();
-
       return (
         <article>
           <header>
-            <time datetime={dataStart}>De {startDate}</time>
-            <time datetime={dataEnd ?? 'actualmente'}>
+            <time datetime={startDate}>De {startDate}</time>
+            <time datetime={endDate ?? new Date().toLocaleDateString('es-ES')}>
               {endDate ? `Al ${endDate}` : 'Actualmente'}
             </time>
             <p>{address}</p>

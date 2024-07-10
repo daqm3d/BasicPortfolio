@@ -9,7 +9,7 @@ import { education } from '@/jsons/cv-AP.json';
       return (
         <article>
           <header>
-            <time datetime={endDate ?? "actualmente" }>
+            <time datetime={endDate ?? new Date().toLocaleDateString('es-ES')}>
               Año {startDate}-{endDate ? ` ${endDate}` : 'Actualmente'}
             </time>
           </header>

@@ -2,7 +2,7 @@
   "basics": {
     "name": "Deivy Armando Quintero Martinez",
     "alias": "DAQM3D",
-    "label": "Full Stack Developer enfocado en los tres vertientes, Diseño, Desarrollo y Despliegue de Aplicaciones Web",
+    "label": "Web Developer Full Stack enfocado en las tres vertientes Diseño, Desarrollo y Despliegue de Aplicaciones Web",
     "image": "./DAQM3D.png",
     "email": "daqm3d@gmail.com",
     "phone": "+584129880279",
@@ -73,7 +73,7 @@
       "name": "Dirección General de Centros de Comando, Control y Telecomunicaciones VEN 911",
       "position": "Soporte Técnico",
       "url": "",
-      "startDate": "30/06/2018",
+      "startDate": "29/06/2018",
       "endDate": "01/02/2019",
       "address": "Caracas - Bellas Artes",
       "summary": [
@@ -86,13 +86,13 @@
     {
       "name": "Dirección General de Centros de Comando, Control y Telecomunicaciones VEN 911",
       "position": "Técnico de Cámaras",
-      "url": "",
-      "startDate": "29/10/2017",
-      "endDate": "30/06/2018",
+      "url": "",  
+      "startDate": "27/10/2017",
+      "endDate": "29/06/2018",
       "address": "Caracas - La California",
       "summary": [
         "Instalación y remoción del sistema de cámaras.",
-        "Revision y mantenimiento de las cámaras.",
+        "Revisión y mantenimiento de las cámaras.",
         "Mantenimiento del área eléctrica y la red de cableado del sistema de cámaras."
       ]
     },
@@ -145,6 +145,11 @@
       "name": "Laravel",
       "level": "",
       "keywords": ["Lenguajes y Framework", "backen"]
+    },
+    {
+      "name": "Astro",
+      "level": "",
+      "keywords": ["Lenguajes y Framework", "fronten"]
     },
     {
       "name": "VueJS",

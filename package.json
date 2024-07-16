@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource-variable/playfair-display": "^5.0.25",
     "astro": "^4.4.0",
+    "autoprefixer": "^10.4.19",
     "ninja-keys": "^1.2.2"
   },
   "devDependencies": {

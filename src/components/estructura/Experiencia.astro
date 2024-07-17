@@ -6,11 +6,17 @@ import { work } from '@/jsons/cv-AP.json';
 <Section id="Experiencia" title="Experiencia Profesional">
   {
     work.map(({ name, startDate, endDate, address, position, summary }) => {
+      const dataStart = startDate.toString().split('/');
+      const dataEnd = endDate ? endDate.toString().split('/') : null;
       return (
         <article>
           <header>
-            <time datetime={startDate}>De {startDate}</time>
-            <time datetime={endDate ?? new Date().toLocaleDateString('es-ES')}>
+            <time datetime={`${dataStart[2]}/${dataStart[1]}/${dataStart[0]}`}>De {startDate}</time>
+            <time
+              datetime={
+                endDate ? `${dataEnd[2]}/${dataEnd[1]}/${dataEnd[0]}` : new Date().toISOString()
+              }
+            >
               {endDate ? `Al ${endDate}` : 'Actualmente'}
             </time>
             <p>{address}</p>

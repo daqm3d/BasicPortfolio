@@ -6,10 +6,11 @@ import { education } from '@/jsons/cv-AP.json';
 <Section id="Educacion" title="Educación">
   {
     education.map(({ area, institution, startDate, endDate }) => {
+      const dataStart = startDate.toString().split('/');
       return (
         <article>
           <header>
-            <time datetime={endDate ?? new Date().toLocaleDateString('es-ES')}>
+            <time datetime={endDate ?? new Date().toISOString()}>
               Año {startDate}-{endDate ? ` ${endDate}` : 'Actualmente'}
             </time>
           </header>

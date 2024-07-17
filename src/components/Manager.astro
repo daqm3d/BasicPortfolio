@@ -89,8 +89,7 @@ const info = profiles.map(({ network, usernam, url }) => {
 ---
 
 <footer class="notPrint">
-  Pulsa<kbd>Cmd</kbd> + <kbd>K</kbd> para abrir la paleta de
-  comandos
+  Pulsa<kbd>Cmd</kbd> + <kbd>K</kbd> para abrir la paleta de comandos
 </footer>
 <ninja-keys
   class="notPrint"
@@ -113,7 +112,6 @@ const info = profiles.map(({ network, usernam, url }) => {
     const icons = ninja.getAttribute('data-icon') ?? '[]';
     const dataIcons = JSON.parse(icons);
 
-    console.log(dataIcons);
     const data = parseInfo.map((item) => {
       return {
         ...item,
@@ -130,11 +128,7 @@ const info = profiles.map(({ network, usernam, url }) => {
         title: 'Seleccionar Tema Web',
         icon: `${dataIcons['Menu']}`,
         section: 'Acciones',
-        children: [
-          'Dark Theme',
-          'Light Theme',
-          'System Theme',
-        ],
+        children: ['Dark Theme', 'Light Theme', 'System Theme'],
         handler: () => {
           ninja.open({ parent: 'Tema' });
           return { keepOpen: true };

@@ -11,10 +11,16 @@ import { work } from '@/jsons/cv-AP.json';
       return (
         <article>
           <header>
-            <time datetime={`${dataStart[2]}/${dataStart[1]}/${dataStart[0]}`}>De {startDate}</time>
+            <time
+              datetime={new Date(`${dataStart[2]}/${dataStart[1]}/${dataStart[0]}`).toISOString()}
+            >
+              De {startDate}
+            </time>
             <time
               datetime={
-                endDate ? `${dataEnd[2]}/${dataEnd[1]}/${dataEnd[0]}` : new Date().toISOString()
+                endDate
+                  ? new Date(`${dataEnd[2]}/${dataEnd[1]}/${dataEnd[0]}`).toISOString()
+                  : new Date().toISOString()
               }
             >
               {endDate ? `Al ${endDate}` : 'Actualmente'}

@@ -31,12 +31,25 @@
 
   "work": [
     {
+      "name": "Instituto Nacional de Canalizaciones.",
+      "position": "Desarrollador por Honorarios Profesionales.",
+      "url": "",
+      "startDate": "20/09/2024",
+      "endDate": "31/03/2025",
+      "address": "Caracas - Chuao",
+      "summary": [
+        "Desarrollar y coordinar los requerimientos en materia del sistemas de indicadores en el Framework Yii2.0.",
+        "Integración de bases de datos existentes del ministerio con el nuevo sistema, asegurando la consistencia y la integridad de los datos.",
+        "Realizar las actividades de recopilación y documentación técnica de los requerimientos desarrollados del sistema de indicadores."
+      ]
+    },
+    {
       "name": "Superintendencia Nacional Antidroga.",
       "position": "Coordinador de Base de Datos y Páginas Web.",
       "url": "",
       "startDate": "12/02/2020",
       "endDate": "10/11/2023",
-      "address": "Caracas - Chacaito",
+      "address": "Caracas - Chapati",
       "summary": [
         "Integrar y coordinar los proyectos y grupos de desarrollo, en materia de sistemas de información para la atención y resolución de problemas o requerimientos.",
         "Realizar las actividades de programación de los sistemas de información requeridos en el diseño de estructuras web, implementación del flujo dinámico y acciones interactivas.",
@@ -155,6 +168,11 @@
       "name": "VueJS",
       "level": "",
       "keywords": ["Lenguajes y Framework", "fronten"]
+    },
+    {
+      "name": "Yii Framework",
+      "level": "",
+      "keywords": ["Lenguajes y Framework", "backen"]
     },
     {
       "name": "Linux",

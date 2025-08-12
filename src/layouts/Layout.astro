@@ -58,14 +58,29 @@ import favicon from '#/favicon.gif';
 </html>
 
 <script>
-  let sun = document.querySelector('.sun');
-  let body = document.querySelector('body');
-  let ninja = document.querySelector('ninja-keys');
+  const sun = document.querySelector('.sun');
+  const body = document.querySelector('body');
+  const ninja = document.querySelector('ninja-keys');
+  const isMode = window.matchMedia('(prefers-color-scheme: dark)');
 
-  sun.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    ninja.classList.toggle('dark');
-  });
+  if (isMode.matches) {
+    body.classList.add('dark');
+    if (ninja) ninja.classList.add('dark');
+  }
+
+  const toggleDarkMode = (event) => {
+    body.classList.toggle('dark', event.matches);
+    if (ninja) ninja.classList.toggle('dark', event.matches);
+  };
+
+  if (isMode.addEventListener && sun.addEventListener) {
+    isMode.addEventListener('change', toggleDarkMode);
+    sun.addEventListener('click', toggleDarkMode);
+  } else {
+    // Safari < 14
+    isMode.addListener(toggleDarkMode);
+    sun.addListener('click', toggleDarkMode);
+  }
 </script>
 
 <style is:global>
@@ -99,6 +114,7 @@ import favicon from '#/favicon.gif';
     --gradient-colorA: var(--color-verde);
     --gradient-colorB: var(--color-blue);
   }
+
   body:is(.dark) {
     --body-color: var(--color-black2);
     --main-color: var(--color-black-nice);

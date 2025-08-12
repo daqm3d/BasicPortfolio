@@ -1,0 +1,117 @@
+{
+  // !  Configuracion windows
+  //  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\git-bash.exe",
+  //  "php.validate.executablePath": "C:\\XAMPP\\php\\php.exe",
+  // "terminal.integrated.defaultProfile.windows": "Git Bash"
+  // * Configuracion general
+  "editor.tabSize": 2,
+  "files.autoSave": "afterDelay",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.env.linux": {},
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.renderControlCharacters": true,
+  "editor.guides.bracketPairs": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.cursorBlinking": "expand",
+  "editor.renderWhitespace": "all",
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.sideBar.location": "right",
+  "breadcrumbs.enabled": true,
+
+  // * Formateador por tipo de archivo
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "[md]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+
+  // * HTMLHint
+  "htmlhint.documentSelector": ["html", "php"],
+  // * Cspell Corrector
+  "cSpell.language": "es,en",
+  "cSpell.enableFiletypes": ["php", "astro", "md", "json"],
+  // * plugin SFTP
+  "sftp.debug": true,
+  "sftp.downloadWhenOpenInRemoteExplorer": true,
+  "sftp.printDebugLog": true,
+  "http.proxyAuthorization": null,
+  // * Prettier
+  "prettier.arrowParens": "always",
+  "prettier.bracketSameLine": false,
+  "prettier.bracketSpacing": true,
+  "prettier.embeddedLanguageFormatting": "auto",
+  "prettier.htmlWhitespaceSensitivity": "css",
+  "prettier.insertPragma": false,
+  "prettier.jsxSingleQuote": false,
+  "prettier.printWidth": 100,
+  "prettier.proseWrap": "preserve",
+  "prettier.quoteProps": "as-needed",
+  "prettier.requirePragma": false,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "es5",
+  "prettier.useTabs": false,
+  // * Better Comments
+  "better-comments.tags": [
+    {
+      // * Comentarios
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      // ? Funcionalidad
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      // ! Alertas
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      // // Firma
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      // # Pendientes
+      "tag": "#",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+  "telemetry.telemetryLevel": "error",
+  "coderabbit.selfHostedUrl": ""
+}

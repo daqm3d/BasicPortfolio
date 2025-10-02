@@ -38,7 +38,7 @@
       "endDate": "31/03/2025",
       "address": "Caracas - Chuao",
       "summary": [
-        "Desarrollar y coordinar los requerimientos en materia del sistemas de indicadores en el Framework Yii2.0.",
+        "Desarrollar y coordinar los requerimientos en materia del sistema de indicadores en el Framework Yii2.0.",
         "Integración de bases de datos existentes del ministerio con el nuevo sistema, asegurando la consistencia y la integridad de los datos.",
         "Realizar las actividades de recopilación y documentación técnica de los requerimientos desarrollados del sistema de indicadores."
       ]
@@ -260,7 +260,7 @@
     {
       "name": "WEB SUNAD",
       "isActive": true,
-      "description": "Implementación de un sitio web que permita la defunción de los avances en materia institucional y social de la Superintendencia Nacional Antidrogas - SUNAD",
+      "description": "Implementación de un sitio web que permita la difusión de los avances en materia institucional y social de la Superintendencia Nacional Antidrogas - SUNAD",
       "highlights": ["HTML5", "CSS3", "WordPress", "MariaDB", "Apache"],
       "url": "https://www.sunad.gob.ve/",
       "repo": null

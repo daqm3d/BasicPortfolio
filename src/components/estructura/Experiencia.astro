@@ -1,11 +1,13 @@
 ---
 import Section from '@/components/Section.astro';
+import Pagination from '@/components/Pagination.astro';
 import { work } from '@/jsons/cv-AP.json';
 ---
 
 <Section id="Experiencia" title="Experiencia Profesional">
-  {
-    work.map(({ name, startDate, endDate, address, position, summary }) => {
+  <Pagination id="experiencia-pag" itemsPerPage={4}>
+    {
+      work.map(({ name, startDate, endDate, address, position, summary }) => {
       const dataStart = startDate.toString().split('/');
       const dataEnd = endDate ? endDate.toString().split('/') : null;
       return (
@@ -37,9 +39,10 @@ import { work } from '@/jsons/cv-AP.json';
             </ul>
           </footer>
         </article>
-      );
-    })
-  }
+        );
+      })
+    }
+  </Pagination>
 </Section>
 <style>
   article {

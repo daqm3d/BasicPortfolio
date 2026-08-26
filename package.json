@@ -10,12 +10,16 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.10",
     "@fontsource-variable/playfair-display": "^5.0.25",
-    "astro": "^5.13.4",
+    "astro": "^7.2.4",
     "ninja-keys": "^1.2.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "html-validate": "^8.20.1"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
   }
 }

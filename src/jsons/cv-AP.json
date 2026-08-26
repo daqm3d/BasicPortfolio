@@ -237,10 +237,100 @@
       "date": "2021-11-07",
       "issuer": "Cisco Networking academy",
       "url": "https://drive.google.com/file/d/1eMy6dN44ObooGlLm2rLceXidSeZMxA2G/view?usp=sharing"
+    },
+    {
+      "name": "NDG LINUX ESSENTIALS",
+      "date": "2021-11-07",
+      "issuer": "Cisco Networking academy",
+      "url": "https://drive.google.com/file/d/1eMy6dN44ObooGlLm2rLceXidSeZMxA2G/view?usp=sharing"
+    },
+    {
+      "name": "NDG LINUX ESSENTIALS",
+      "date": "2021-11-07",
+      "issuer": "Cisco Networking academy",
+      "url": "https://drive.google.com/file/d/1eMy6dN44ObooGlLm2rLceXidSeZMxA2G/view?usp=sharing"
+    },
+    {
+      "name": "NDG LINUX ESSENTIALS",
+      "date": "2021-11-07",
+      "issuer": "Cisco Networking academy",
+      "url": "https://drive.google.com/file/d/1eMy6dN44ObooGlLm2rLceXidSeZMxA2G/view?usp=sharing"
+    },
+    {
+      "name": "NDG LINUX ESSENTIALS",
+      "date": "2021-11-07",
+      "issuer": "Cisco Networking academy",
+      "url": "https://drive.google.com/file/d/1eMy6dN44ObooGlLm2rLceXidSeZMxA2G/view?usp=sharing"
+    },
+    {
+      "name": "NDG LINUX ESSENTIALS",
+      "date": "2021-11-07",
+      "issuer": "Cisco Networking academy",
+      "url": "https://drive.google.com/file/d/1eMy6dN44ObooGlLm2rLceXidSeZMxA2G/view?usp=sharing"
+    },
+    {
+      "name": "NDG LINUX ESSENTIALS",
+      "date": "2021-11-07",
+      "issuer": "Cisco Networking academy",
+      "url": "https://drive.google.com/file/d/1eMy6dN44ObooGlLm2rLceXidSeZMxA2G/view?usp=sharing"
+    },
+    {
+      "name": "NDG LINUX ESSENTIALS",
+      "date": "2021-11-07",
+      "issuer": "Cisco Networking academy",
+      "url": "https://drive.google.com/file/d/1eMy6dN44ObooGlLm2rLceXidSeZMxA2G/view?usp=sharing"
     }
   ],
 
   "projects": [
+    {
+      "name": "Intranet SUNAD",
+      "isActive": true,
+      "description": "Diseño de un Aplicativo web que permita la automatización de diversas funciones del area de RRHH como son los ARC, Recibos de pago, Constancia de trabajo y otros",
+      "highlights": ["HTML5", "CSS3", "JavaScript", "Laravel", "MariaDB", "Nginx", "Docker"],
+      "url": "https://intranet.sunad.gob.ve/",
+      "repo": null
+    },
+    {
+      "name": "Proyecto OVD-SUNAD",
+      "isActive": true,
+      "description": "Creación de un aplicativo web el cual permita gestionar y manejar las sustancias ilegales incautadas por los diversos organismos del estado que se reportan a la SUNAD",
+      "highlights": ["HTML5", "CSS3", "JavaScript", "php", "MariaDB", "Nginx"],
+      "url": "https://incautaciones.sunad.gob.ve/",
+      "repo": null
+    },
+    {
+      "name": "Intranet SUNAD",
+      "isActive": true,
+      "description": "Diseño de un Aplicativo web que permita la automatización de diversas funciones del area de RRHH como son los ARC, Recibos de pago, Constancia de trabajo y otros",
+      "highlights": ["HTML5", "CSS3", "JavaScript", "Laravel", "MariaDB", "Nginx", "Docker"],
+      "url": "https://intranet.sunad.gob.ve/",
+      "repo": null
+    },
+    {
+      "name": "Proyecto OVD-SUNAD",
+      "isActive": true,
+      "description": "Creación de un aplicativo web el cual permita gestionar y manejar las sustancias ilegales incautadas por los diversos organismos del estado que se reportan a la SUNAD",
+      "highlights": ["HTML5", "CSS3", "JavaScript", "php", "MariaDB", "Nginx"],
+      "url": "https://incautaciones.sunad.gob.ve/",
+      "repo": null
+    },
+    {
+      "name": "Intranet SUNAD",
+      "isActive": true,
+      "description": "Diseño de un Aplicativo web que permita la automatización de diversas funciones del area de RRHH como son los ARC, Recibos de pago, Constancia de trabajo y otros",
+      "highlights": ["HTML5", "CSS3", "JavaScript", "Laravel", "MariaDB", "Nginx", "Docker"],
+      "url": "https://intranet.sunad.gob.ve/",
+      "repo": null
+    },
+    {
+      "name": "Proyecto OVD-SUNAD",
+      "isActive": true,
+      "description": "Creación de un aplicativo web el cual permita gestionar y manejar las sustancias ilegales incautadas por los diversos organismos del estado que se reportan a la SUNAD",
+      "highlights": ["HTML5", "CSS3", "JavaScript", "php", "MariaDB", "Nginx"],
+      "url": "https://incautaciones.sunad.gob.ve/",
+      "repo": null
+    },
     {
       "name": "Intranet SUNAD",
       "isActive": true,

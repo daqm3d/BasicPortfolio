@@ -1,5 +1,6 @@
 ---
 import Section from '@/components/Section.astro';
+import Pagination from '@/components/Pagination.astro';
 import { projects } from '@/jsons/cv-AP.json';
 import GitHub from '@/icons/GitHub.astro';
 import WorldMap from '@/icons/WorldMap.astro';
@@ -7,9 +8,10 @@ import WorldMap from '@/icons/WorldMap.astro';
 
 <Section id="Proyectos" title="Proyectos">
   <div hidden popover id="my-popover">Greetings, one and all!</div>
-  <ul>
-    {
-      projects.map(({ name, isActive, description, highlights, url, repo }) => {
+  <Pagination id="proyectos-pag" itemsPerPage={4}>
+    <ul>
+      {
+        projects.map(({ name, isActive, description, highlights, url, repo }) => {
         return (
           <li>
             <article class="proyectos">
@@ -61,9 +63,10 @@ import WorldMap from '@/icons/WorldMap.astro';
             </article>
           </li>
         );
-      })
-    }
-  </ul>
+        })
+      }
+    </ul>
+  </Pagination>
 </Section>
 
 <script>

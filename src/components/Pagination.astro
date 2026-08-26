@@ -1,0 +1,256 @@
+---
+interface Props {
+  id: string;
+  itemsPerPage?: number;
+}
+
+const { id, itemsPerPage = 4 } = Astro.props;
+---
+
+<div
+  class="pagination-container"
+  id={id}
+  data-pagination
+  data-items-per-page={itemsPerPage}
+>
+  <div class="pagination-content">
+    <slot />
+  </div>
+  <div class="pagination-dots notPrint"></div>
+</div>
+
+<script>
+  /**
+   * Paginación multi-instancia e idempotente.
+   * Sin JS las secciones se muestran apiladas (fallback); al paginar se
+   * activa el carrusel horizontal añadiendo la clase `is-ready`.
+   */
+  function setupPagination(container: HTMLElement) {
+    // Guard: no repaginar un DOM ya inicializado (ej. tras un swap)
+    if (container.dataset.paginationReady) return;
+
+    const content = container.querySelector<HTMLElement>('.pagination-content');
+    const dotsContainer = container.querySelector<HTMLElement>('.pagination-dots');
+    if (!content || !dotsContainer) return;
+
+    const itemsPerPage = Number(container.dataset.itemsPerPage) || 4;
+    const items = Array.from(
+      content.querySelectorAll<HTMLElement>(':scope > ul > li, :scope > article')
+    );
+
+    // Poco contenido: no se pagina, queda el flujo natural y los dots vacíos
+    // (se ocultan solos con .pagination-dots:empty)
+    if (items.length <= itemsPerPage) return;
+
+    container.dataset.paginationReady = 'true';
+
+    const sourceParent = items[0].parentElement!;
+    const isInsideUl = sourceParent.tagName === 'UL';
+    const pageCount = Math.ceil(items.length / itemsPerPage);
+
+    // Reagrupar en páginas usando un fragmento (evita reflows intermedios)
+    const fragment = document.createDocumentFragment();
+    for (let i = 0; i < pageCount; i++) {
+      const page = document.createElement('div');
+      page.className = 'pagination-page';
+
+      let target: HTMLElement = page;
+      if (isInsideUl) {
+        // Clonar el UL original con todos sus atributos para conservar
+        // clases y estilos scoped del componente consumidor
+        const list = document.createElement(sourceParent.tagName);
+        for (const attr of Array.from(sourceParent.attributes)) {
+          list.setAttribute(attr.name, attr.value);
+        }
+        list.setAttribute('data-pagination-grid', '');
+        page.appendChild(list);
+        target = list;
+      }
+
+      target.append(
+        ...(items.slice(i * itemsPerPage, (i + 1) * itemsPerPage) as HTMLElement[])
+      );
+      fragment.appendChild(page);
+    }
+
+    content.replaceChildren(fragment);
+
+    // Puntos de navegación
+    const dots: HTMLButtonElement[] = [];
+    for (let i = 0; i < pageCount; i++) {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Ir a página ${i + 1}`);
+      if (i === 0) dot.setAttribute('aria-current', 'true');
+      dot.addEventListener('click', () => goToPage(i));
+      dotsContainer.appendChild(dot);
+      dots.push(dot);
+    }
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let currentPage = 0;
+    let lastWidth = content.clientWidth;
+
+    function setActiveDot(index: number) {
+      if (index === currentPage) return;
+      dots[currentPage].classList.remove('active');
+      dots[currentPage].removeAttribute('aria-current');
+      currentPage = index;
+      dots[currentPage].classList.add('active');
+      dots[currentPage].setAttribute('aria-current', 'true');
+    }
+
+    function goToPage(index: number) {
+      setActiveDot(index);
+      content.scrollTo({
+        left: index * content.clientWidth,
+        behavior: reducedMotion.matches ? 'auto' : 'smooth',
+      });
+    }
+
+    // Sincronizar el punto activo con el scroll (swipe táctil incluido)
+    content.addEventListener(
+      'scroll',
+      () => {
+        const page = Math.min(
+          pageCount - 1,
+          Math.max(0, Math.round(content.scrollLeft / content.clientWidth))
+        );
+        setActiveDot(page);
+      },
+      { passive: true }
+    );
+
+    // Mantener el encuadre si cambia el ancho del contenedor
+    window.addEventListener(
+      'resize',
+      () => {
+        if (content.clientWidth !== lastWidth) {
+          lastWidth = content.clientWidth;
+          content.scrollLeft = currentPage * lastWidth;
+        }
+      },
+      { passive: true }
+    );
+
+    // Activar el carrusel solo ahora que hay páginas
+    container.classList.add('is-ready');
+  }
+
+  function initAllPaginations() {
+    document
+      .querySelectorAll<HTMLElement>('[data-pagination]')
+      .forEach(setupPagination);
+  }
+
+  initAllPaginations();
+  document.addEventListener('astro:after-swap', initAllPaginations);
+</script>
+
+<style is:global>
+  .pagination-container {
+    width: 100%;
+    position: relative;
+  }
+
+  /* Fallback sin JS / sección corta: flujo normal, nada cortado */
+  .pagination-content {
+    width: 100%;
+  }
+
+  /* Carrusel: solo cuando JS creó las páginas */
+  .is-ready .pagination-content {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .is-ready .pagination-content::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pagination-page {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Espaciado para elementos directos como article */
+  }
+
+  /* Listas dentro de las páginas mantienen el estilo original del UL copiado */
+  .pagination-page ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* Alturas iguales entre cards de una misma página,
+     también en la última página incompleta */
+  .pagination-page [data-pagination-grid] {
+    grid-auto-rows: 1fr;
+  }
+  .pagination-page [data-pagination-grid] > li {
+    display: flex;
+  }
+  .pagination-page [data-pagination-grid] > li > * {
+    flex: 1;
+  }
+
+  .pagination-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pagination-dots:empty {
+    display: none;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .dot:focus-visible {
+    outline: 2px solid var(--hover-border);
+    outline-offset: 2px;
+  }
+
+  .dot.active {
+    background: var(--background);
+    border-color: var(--hover-border);
+    transform: scale(1.2);
+    box-shadow: 0 0 10px var(--color-verde);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .is-ready .pagination-content {
+      scroll-behavior: auto;
+    }
+  }
+
+  @media print {
+    .is-ready .pagination-content {
+      display: block !important;
+      overflow: visible !important;
+    }
+    .pagination-page {
+      flex: none !important;
+      width: 100% !important;
+    }
+  }
+</style>

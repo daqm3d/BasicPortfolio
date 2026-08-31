@@ -1,14 +1,12 @@
 ---
 import Section from '@/components/Section.astro';
-import Pagination from '@/components/Pagination.astro';
 import { certificates } from '@/jsons/cv-AP.json';
 ---
 
 <Section id="Cursos" title="Cursos">
-  <Pagination id="cursos-pag" itemsPerPage={3}>
-    <ul>
-      {
-        certificates.map(({ name, date, issuer, url }) => {
+  <ul>
+    {
+      certificates.map(({ name, date, issuer, url }) => {
         return (
           <li>
             <article>
@@ -26,17 +24,15 @@ import { certificates } from '@/jsons/cv-AP.json';
             </article>
           </li>
         );
-        })
-      }
-    </ul>
-  </Pagination>
+      })
+    }
+  </ul>
 </Section>
 <style>
   ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 0.8rem;
-    width: 100%;
     a:hover {
       text-decoration: underline;
     }
